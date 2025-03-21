@@ -106,8 +106,8 @@ button {
 }
 
 #name {
-    font-size: 5rem;
-    letter-spacing: 5px;
+    font-size: 4.75rem;
+    letter-spacing: 7px;
 }
 
 #about-me-section h2 {
@@ -385,7 +385,7 @@ section {
     
     /* Banner */
     #name {
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
 
     /* Content Adjustments */
