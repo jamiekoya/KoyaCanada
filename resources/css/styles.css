@@ -87,9 +87,21 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 120px 20px 60px;
+    position: relative;
+    padding: 120px 20px 60px; /* Combined padding value */
     text-align: center;
+    color: white;
+    margin: 60px 0 0 0;
+    background-color: transparent;
+    background-image: url('https://static.wixstatic.com/media/c4e3e7_0f5c3796d237403c9c012e1755c2f588~mv2.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    width: 100%; 
+    border-radius: 10px;
 }
+
 
 #name {
     font-size: 5rem;
@@ -155,19 +167,48 @@ section {
 
 /* Projects Grid */
 .projects-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px; 
+    row-gap: 20px;    
+    max-width: 1200px; 
+    margin: 0 auto;   
 }
 
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Box color*/
 .project-card {
-    background-color: rgba(51, 51, 51, 0.6);
+    background-color: rgba(51, 51, 51, 0);
     border-radius: 10px;
     padding: 20px;
     width: 100%;
     max-width: 400px;
     box-sizing: border-box;
+}
+
+.project-card ul {
+    max-width: 250px;   
+    margin: 10px auto;  
+    text-align: center; 
+}
+
+.underline {
+    text-decoration: none; 
+}
+
+.underline:hover {
+    text-decoration: underline;
 }
 
 .project-card .image-container {
@@ -230,23 +271,6 @@ section {
 
 .skills-column ul {
     list-style: disc inside;
-}
-
-/* Additional Skills Section */
-.additional-skills {
-    position: relative;
-    padding: 60px 0; 
-    text-align: center;
-    color: white;
-    margin: 60px 0 0 0;
-    background-image: url('https://ashleyweisportfolioresources.s3.us-west-2.amazonaws.com/images/KoreGif1.gif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-    width: 100%; 
-    border-radius: 10px;
-
 }
 
 .additional-skills::before {
