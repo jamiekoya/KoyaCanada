@@ -92,7 +92,7 @@ button {
 }
 
 #name {
-    font-size: 3rem;
+    font-size: 5rem;
     letter-spacing: 5px;
 }
 
@@ -105,9 +105,14 @@ button {
     text-align: center;
 }
 
-/* Section Styles */
 section {
     padding: 60px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 4rem !important;
 }
 
 .container {
@@ -122,7 +127,7 @@ section {
 
 .container img {
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -161,7 +166,7 @@ section {
     border-radius: 10px;
     padding: 20px;
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
     box-sizing: border-box;
 }
 
@@ -176,7 +181,7 @@ section {
 .project-card .image-container::before {
     content: "";
     display: block;
-    padding-top: 56.25%;
+    padding-top: 80.25%;
 }
 
 .project-card img {
