@@ -118,8 +118,14 @@ section {
 /* Centered Section Titles */
 .section-title {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-size: 3rem;
+    padding-top: 100px;
+}
+
+.shop-subheader{
+    text-align: center;
+    padding-bottom: 100px;
 }
 
 .container {
@@ -362,6 +368,17 @@ section {
         display: none;
     }
 
+    .banner {
+        padding: 60px 20px;
+        margin-top: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+        height: auto; 
+        margin-bottom: 0;
+    }
+    
     /* Banner */
     #name {
         font-size: 2rem;
@@ -384,6 +401,13 @@ section {
 
     .section-title {
         font-size: 1.5rem;
+        padding-top: 25px;
+    }
+
+    .shop-subheader{
+        text-align: center;
+        font-size: 0.4rem;
+        padding-bottom: 25px;
     }
 
     .projects-grid {
@@ -395,6 +419,19 @@ section {
     /* Projects Grid */
     .project-card {
         max-width: 100%;
+    }
+
+    .project-card li{
+        padding-top: 25px;
+    }
+
+    .stock-status {
+        display: inline-block; 
+        padding: 4px 10px;
+        color: white;
+        font-size: 0.25rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50px;
     }
 
     .project-card .image-container {
