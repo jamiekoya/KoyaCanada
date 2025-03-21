@@ -1,0 +1,501 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Source+Code+Pro&display=swap');
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Source Code Pro', monospace;
+    color: white;
+    background: url('https://ashleyweisportfolioresources.s3.us-west-2.amazonaws.com/images/WebsiteGradient.png') center/cover repeat;
+    overflow-x: hidden;
+}
+
+/* Resetting default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    font-family: 'Abel', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+p, li {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: 'Abel', sans-serif;
+    letter-spacing: 1px;
+    /* Ensure buttons have consistent box-sizing */
+    box-sizing: border-box;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(51, 51, 51, 0.6);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+/* Banner Styles */
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px 20px 60px;
+    text-align: center;
+}
+
+#name {
+    font-size: 3rem;
+    letter-spacing: 5px;
+}
+
+#career-title {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+#about-me-section h2 {
+    text-align: center;
+}
+
+/* Section Styles */
+section {
+    padding: 60px 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.content p {
+    margin-bottom: 0;
+}
+
+/* Centered Section Titles */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: rgba(51, 51, 51, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+    box-sizing: border-box;
+}
+
+.project-card .image-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project-card .image-container::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}
+
+.project-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.project-card img:hover {
+    transform: scale(1.05);
+}
+
+.project-card ul {
+    margin-top: 10px;
+}
+
+.project-card p {
+    margin-top: 10px;
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.skills-column {
+    background-color: rgba(51, 51, 51, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+.skills-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.skills-column ul {
+    list-style: disc inside;
+}
+
+/* Additional Skills Section */
+.additional-skills {
+    position: relative;
+    padding: 60px 0; 
+    text-align: center;
+    color: white;
+    margin: 60px 0 0 0;
+    background-image: url('https://ashleyweisportfolioresources.s3.us-west-2.amazonaws.com/images/KoreGif1.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    width: 100%; 
+    border-radius: 10px;
+
+}
+
+.additional-skills::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.additional-skills h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.additional-skills ul {
+    display: inline-block;
+    text-align: left;
+    list-style: disc outside;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    position: relative;
+}
+
+.additional-skills li {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+/* Section Buttons */
+.section-buttons {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.section-buttons button:hover {
+    background-color: #555;
+}
+
+/* Interactive Sections */
+#interactive-sections .hidden {
+    display: none;
+}
+
+#interactive-sections section {
+    padding: 0;
+}
+
+#interactive-sections h2 {
+    margin-top: 0;
+}
+
+/* Media Section */
+#spotify-widget,
+#video-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+#spotify-widget iframe,
+#video-section iframe {
+    width: 100%;
+    max-width: 600px;
+    height: 350px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#spotify-widget iframe {
+    height: 450px;
+}
+
+#spotify-widget aside,
+#video-section aside,
+#spotify-widget p,
+#video-section p {
+    width: 100%;
+    max-width: 600px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Contact Section */
+#contact-section {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact-section input,
+#contact-section textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+}
+
+#contact-section button {
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#contact-section button:hover {
+    background-color: gray;
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: #333;
+    opacity: 0.5;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 1.1px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    /* Hide Navbar on Mobile Devices */
+    .navbar {
+        display: none;
+    }
+
+    /* Stack Section Buttons on Mobile Devices */
+    .section-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-buttons button {
+        display: block; /* Added this line */
+        margin: 10px 0;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* Banner */
+    #name {
+        font-size: 2rem;
+    }
+
+    #career-title {
+        font-size: 1.2rem;
+    }
+
+    /* Content Adjustments */
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .content h2 {
+        font-size: 2rem;
+    }
+
+    /* Projects Grid */
+    .project-card {
+        max-width: 100%;
+    }
+
+    .project-card .image-container {
+        height: 150px; /* Adjust the height for smaller screens if needed */
+    }
+
+    /* Skills Section */
+    .skills-column {
+        max-width: 100%;
+    }
+
+    .additional-skills {
+        padding: 40px 0; /* Removed side padding */
+        margin: 40px 0 0 0; /* Removed side margins */
+        width: 100%; /* Ensure full width */
+    }
+
+    .additional-skills h3 {
+        font-size: 1.5rem;
+    }
+
+    .additional-skills li {
+        font-size: 1rem;
+    }
+
+    /* Media Section */
+    #spotify-widget iframe,
+    #video-section iframe {
+        height: 200px;
+    }
+
+    /* Contact Section */
+    #contact-section h2 {
+        font-size: 1.5rem;
+    }
+
+    #contact-section input,
+    #contact-section textarea {
+        font-size: 0.9rem;
+    }
+
+    #contact-section button {
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .site-footer p {
+        font-size: 0.8rem;
+    }
+}

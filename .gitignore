@@ -1,0 +1,47 @@
+# Ignore all compiled or minified files
+*.min.js
+*.min.css
+
+# Ignore backup files created by editors
+*~
+*.swp
+*.bak
+*.tmp
+*.log
+
+# Ignore dependencies (if using a package manager like npm)
+node_modules/
+bower_components/
+
+# Ignore build directories
+dist/
+build/
+out/
+
+# Ignore system files
+.DS_Store        # macOS
+Thumbs.db        # Windows
+Desktop.ini      # Windows
+
+# Ignore environment variables
+.env
+.env.local
+
+# Ignore IDE and editor settings
+.vscode/
+.idea/
+*.code-workspace
+
+# Ignore generated files
+*.zip
+*.tar
+*.gz
+
+# Ignore temporary or cache files
+.cache/
+*.lock
+
+# Ignore media files
+*.mp4
+*.png
+*.jpg
