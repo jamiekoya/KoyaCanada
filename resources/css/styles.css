@@ -163,29 +163,53 @@ section {
     margin: 0 auto;   
 }
 
+.underline {
+    text-decoration: none; 
+    text-decoration-thickness: 3px;
+    padding-top: 15px;
+}
+
+.underline:hover {
+    text-decoration: underline;
+}
+
 /* Box color*/
 .project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background: none;
     border-radius: 10px;
     padding: 20px;
     width: 100%;
     max-width: 400px;
     box-sizing: border-box;
+    text-align: center;
+}
+
+.status-container {
+    width: 100%; 
+    text-align: left;
+}
+
+.stock-status {
+    display: inline-block; 
+    padding: 4px 10px;
+    color: white;
+    font-size: 0.65rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50px;
 }
 
 .project-card ul {
-    max-width: 250px;   
-    margin: 10px auto;  
+    width: 100%;
+    padding: 0;
+    margin-top: 0;
     text-align: center; 
+    list-style-type: none;
 }
-
-.underline {
-    text-decoration: none; 
-    text-decoration-thickness: 3px;
-}
-
-.underline:hover {
-    text-decoration: underline;
+.project-card li {
+    margin-top: -20px; 
 }
 
 .project-card .image-container {
@@ -218,7 +242,7 @@ section {
 }
 
 /* Underline the link inside the li when hovering over the image container */
-.image-container:hover + ul li.underline a {
+.image-container:hover ~ ul li.underline a {
     text-decoration: underline;
 }
 
@@ -238,14 +262,6 @@ section {
 
 .project-card:hover .image-container img {
     transform: scale(1.05);
-}
-
-.project-card ul {
-    margin-top: 10px;
-}
-
-.project-card p {
-    margin-top: 10px;
 }
 
 /* Media Section */
