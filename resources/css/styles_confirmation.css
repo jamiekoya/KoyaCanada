@@ -1,0 +1,41 @@
+body {
+    text-align: center; /* Centers Text */
+    display: flex;
+    justify-content: center; /* Horizontally center the content container */
+    align-items: center; /* Vertically center the content container */
+    height: 100vh; /* Use the full height of the viewport */
+    margin: 0; /* Remove default margin */
+}
+
+.centered-content {
+    width: 90%; /* Set a max-width for the content */
+    max-width: 600px; /* Maximum width */
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff; /* Blue background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.home-button {
+    font-size: 18px; /* Larger text for home button */
+}
+
+.instagram-button img {
+    width: 50px; /* Set image width for Instagram button */
+    height: 50px; /* Set image height for Instagram button */
+}
+
+h1 {
+    margin-bottom: 20px; /* Space below the header */
+}
