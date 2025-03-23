@@ -1,3 +1,4 @@
+/* Import Fonts */
 /* Global Styles */
 body {
     margin: 0;
@@ -41,6 +42,28 @@ button {
     letter-spacing: 1px;
     box-sizing: border-box;
 }
+
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1rem; 
+    gap: 1rem;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+}
+
 
 /* Banner Styles */
 .banner {
