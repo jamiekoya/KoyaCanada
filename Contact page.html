@@ -9,16 +9,18 @@
 </head>
 <body class="main-content">
     <header>
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html" class="home-button">Home</a></li>
-            </ul>
-        </nav>
+        <ul>
+            <li><a href="index.html" class="home-button">Home</a></li>
+        </ul>
     </header>
     <div class="centered-content">
         <h1>Contact Us</h1>
         <p>If you have any questions or concerns, feel free to reach out to us using the form below or through our social media channels.</p>
-        <form action="submit_contact_form.php" method="POST" class="contact-form">
+        <a href="https://www.instagram.com/jamiekoya" target="_blank" class="button instagram-button">
+            <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/instagram-icone-icon.png" alt="Instagram" style="width: 24px; height: 24px;">
+        </a>
+        <p>Instagram: @jamiekoya</p>
+        <form action="mailto:jamesweis16@gmail.com" method="POST" enctype="text/plain" class="contact-form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             
@@ -30,9 +32,6 @@
             
             <button type="submit" class="button submit-button">Submit</button>
         </form>
-        <a href="https://www.instagram.com/jamiekoya" target="_blank" class="button instagram-button">
-            <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/instagram-icone-icon.png" alt="Instagram" style="width: 24px; height: 24px;">
-        </a>
     </div>
 </body>
 </html>
