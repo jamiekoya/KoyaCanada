@@ -1,0 +1,24 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Source+Code+Pro&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Source Code Pro', monospace;
+    color: white;
+    background: url('https://ashleyweisportfolioresources.s3.us-west-2.amazonaws.com/images/WebsiteGradient.png') center/cover repeat;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(51, 51, 51, 0.6);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding-top: 1rem; 
+    padding-bottom: 1rem; 
+}
+
+.navbar a:hover {
+    background-color: #555;
+}

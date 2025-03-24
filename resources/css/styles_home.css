@@ -1,12 +1,6 @@
-/* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Source+Code+Pro&display=swap');
-
-/* Global Styles */
+/* Home page styles */
 body {
     margin: 0;
-    font-family: 'Source Code Pro', monospace;
-    color: white;
-    background: url('https://ashleyweisportfolioresources.s3.us-west-2.amazonaws.com/images/WebsiteGradient.png') center/cover repeat;
     overflow-x: hidden;
 }
 
@@ -48,17 +42,6 @@ button {
     box-sizing: border-box;
 }
 
-/* Navbar Styles */
-.navbar {
-    background-color: rgba(51, 51, 51, 0.6);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    padding-top: 1rem; 
-    padding-bottom: 1rem; 
-}
-
 .navbar ul {
     display: flex;
     flex-wrap: wrap;
@@ -67,7 +50,6 @@ button {
     padding: 0.1rem; 
     gap: 1rem;
 }
-
 
 .navbar li {
     display: inline;
@@ -81,9 +63,6 @@ button {
     font-size: 1rem;
 }
 
-.navbar a:hover {
-    background-color: #555;
-}
 
 /* Banner Styles */
 .banner {
@@ -96,7 +75,7 @@ button {
     color: white;
     margin: 60px 0 0 0;
     background-color: transparent;
-    background-image: url('https://static.wixstatic.com/media/c4e3e7_0f5c3796d237403c9c012e1755c2f588~mv2.gif');
+    background-image: url('https://koyacanadawebsite.blob.core.windows.net/websiteimages/chappell knight Shattered light 6.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -218,7 +197,7 @@ section {
     list-style-type: none;
 }
 .project-card li {
-    margin-top: -20px; 
+    margin-top: 0px; 
 }
 
 .project-card .image-container {

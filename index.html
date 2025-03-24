@@ -6,10 +6,16 @@
     <title>Koya Collection</title>
     <!--This is a path to the image that appears as your website icon in the browser-->
     <link rel="icon" href="https://koyacanadawebsite.blob.core.windows.net/websiteimages/JamesWebsiteIcon.png">
-    <link rel="stylesheet" href="./resources/css/styles.css">
+    <link rel="stylesheet" href="./resources/css/styles_home.css">
+    <link rel="stylesheet" href="./resources/css/styles_body.css">
     <!--This is a link to a font we import for use-->
     <link href="https://fonts.googleapis.com/css2?family=Abel&family=Source+Code+Pro&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- JavaScript to declare a URL variable -->
+    <script type="text/javascript">
+        // This link changes all store links
+        var paymentUrl = "https://www.paypal.com/ncp/payment/9M8DUNU277ANL";
+    </script>
 </head>
 <body>
     <!-- Header and Navigation -->
@@ -29,99 +35,136 @@
         <section class="banner">
             <h1 id="name">Koya Collection</h1>
         </section>
+        <a href="index.html">Home/</a>
+        <a href="confirmation_page.html">Confirmation Page/</a>
 
-        <!-- About Me Section -->
-        <!-- <section id="about-me-section"> -->
-            <!-- <div class="container"> -->
-                <!-- <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/SailorMoon.jpg" alt="Profile Picture"> -->
-                <!-- <div class="content"> -->
-                    <!-- <h2>About</h2> -->
-                    <!-- <p>
-                        Say something about yourself James.
-                    </p> -->
-                <!-- </div> -->
-            <!-- </div> -->
-        <!-- </section> -->
+        <section>
+                <!-- Instagram Link -->
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="https://www.instagram.com/jamiekoya" target="_blank" rel="noopener noreferrer">
+                    <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/instagram-icone-icon.png" alt="Instagram" style="width: 40px; height: 40px;">
+                </a>
 
+            <!-- Linktree Link -->
+                <a href="https://linktr.ee/Jamiekoya?utm_source=linktree_admin_share" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: white; color: black; text-decoration: none; border: 1px solid black; border-radius: 5px; font-family: Arial, sans-serif; font-size: 14px;">
+                    Linktree
+                </a>
+            </div>
+        </section>
+     
         <!-- Shop Section -->
         <section id="shop">
             <h2 class="section-title">Shop</h2>
-            <p class="shop-subheader">The art and designs are all hand drawn by me. Please give 3-4 weeks for shipping.</p>
+            <p class="shop-subheader">All designs created and hand painted by me @jamiekoya. Please give 2-4 weeks for shipping.</p>
             <div class="projects-grid">
                 <!-- Product 1 -->
                 <div class="project-card">
                     <div class="image-container">
-                        <a href="https://www.etsy.com/ca/listing/1883374869/chappell-roan-of-arc-acid-wash-oversize?ref=shop_home_feat_2&logging_key=354bb4f59fa6296e1c630f34b4ec73f3fd4ad54e%3A1883374869" target="_blank" rel="noopener noreferrer">
+                        <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;">
                             <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanShirtTransparentFront.png" alt="chappell-roan-shirt">
                             <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanShirtTransparentBack.png" alt="chappell-roan-shirt">
                         </a>
                     </div>
                     <div class="status-container">
-                        <a href="https://www.etsy.com/ca/listing/1883374869/chappell-roan-of-arc-acid-wash-oversize?ref=shop_home_feat_2&logging_key=354bb4f59fa6296e1c630f34b4ec73f3fd4ad54e%3A1883374869" target="_blank" rel="noopener noreferrer" class="stock-status in-stock">In stock</a>
+                        <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;" class="stock-status in-stock">In stock</a>
                     </div>
                     <ul>
                         <li class="underline">
-                            <a href="https://www.etsy.com/ca/listing/1883374869/chappell-roan-of-arc-acid-wash-oversize?ref=shop_home_feat_2&logging_key=354bb4f59fa6296e1c630f34b4ec73f3fd4ad54e%3A1883374869" target="_blank" rel="noopener noreferrer">Chappell Roan of Arc</a>
+                            <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;">Chappell Roan of Arc - Oversized T-shirt</a>
                         </li>
                     </ul>
                 </div>
                 <!-- Product 2 -->
                 <div class="project-card">
                     <div class="image-container">
-                        <a href="https://www.etsy.com/ca/listing/1883383247/island-goddess-fiji-time-vintage-wash?ref=shop_home_active_1&logging_key=7c2adcb11e22981ca896568a48b8db17591e1010%3A1883383247" target="_blank" rel="noopener noreferrer">
+                        <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;">
                             <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/IslandGoddessTransparentFront.png" alt="island-goddess">
                             <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/IslandGoddessTransparentBack.png" alt="island-goddess">
                         </a>
                     </div>
                     <div class="status-container">
-                        <a href="https://www.etsy.com/ca/listing/1883383247/island-goddess-fiji-time-vintage-wash?ref=shop_home_active_1&logging_key=7c2adcb11e22981ca896568a48b8db17591e1010%3A1883383247" target="_blank" rel="noopener noreferrer" class="stock-status in-stock">In stock</a>
+                        <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;" class="stock-status in-stock">In stock</a>
                     </div>
                     <ul>
                         <li class="underline">
-                            <a href="https://www.etsy.com/ca/listing/1883383247/island-goddess-fiji-time-vintage-wash?ref=shop_home_active_1&logging_key=7c2adcb11e22981ca896568a48b8db17591e1010%3A1883383247" target="_blank" rel="noopener noreferrer">Island Goddess “Fiji Time”</a>
+                            <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;">Island Goddess “Fiji Time” - Oversized T-shirt</a>
                         </li>
                     </ul>
                 </div>
                 <!-- Product 3 -->
                 <div class="project-card">
                     <div class="image-container">
-                        <a href="https://www.etsy.com/ca/listing/1883373713/chappell-roan-of-arc-acid-wash-oversize?ref=shop_home_active_3&logging_key=6d7a9044c435c816b1a71c6cce89afd97edab002%3A1883373713" target="_blank" rel="noopener noreferrer">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanOfArcFront.png" alt="chappell-roan-of-arc">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanOfArcBack.png" alt="chappell-roan-of-arc">
+                        <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;">
+                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Doja shirt front.png" alt="Doja Cat-Crop Top">
+                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Doja shirt back.png" alt="Doja Cat-Crop Top">
                         </a>
                     </div>
                     <div class="status-container">
-                        <a href="https://www.etsy.com/ca/listing/1883373713/chappell-roan-of-arc-acid-wash-oversize?ref=shop_home_active_3&logging_key=6d7a9044c435c816b1a71c6cce89afd97edab002%3A1883373713" target="_blank" rel="noopener noreferrer" class="stock-status in-stock">In stock</a>
+                        <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;" class="stock-status in-stock">In stock</a>
                     </div>
                     <ul>
                         <li class="underline">
-                            <a href="https://www.etsy.com/ca/listing/1883373713/chappell-roan-of-arc-acid-wash-oversize?ref=shop_home_active_3&logging_key=6d7a9044c435c816b1a71c6cce89afd97edab002%3A1883373713" target="_blank" rel="noopener noreferrer">Chappell Roan of Arc</a>
+                            <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;">Doja Cat "Mooo!" - Crop Top</a>
                         </li>
                     </ul>
                 </div>
                 <!-- Product 4 -->
                 <div class="project-card">
                     <div class="image-container">
-                        <a href="https://www.etsy.com/ca/listing/1809553179/space-goddess-vintage-wash-frayed-t?ref=shop_home_active_4&logging_key=c2aa06a005de62fdcf31d1978e695df372ad0f70%3A1809553179" target="_blank" rel="noopener noreferrer">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/CenterOfTheUniverseFront.png" alt="space-goddess">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/CenterOfTheUniverseBack.png" alt="space-goddess">
+                        <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;">
+                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanOfArcFront.png" alt="chappell-roan-of-arc">
+                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanOfArcBack.png" alt="chappell-roan-of-arc">
                         </a>
                     </div>
                     <div class="status-container">
-                        <a href="https://www.etsy.com/ca/listing/1809553179/space-goddess-vintage-wash-frayed-t?ref=shop_home_active_4&logging_key=c2aa06a005de62fdcf31d1978e695df372ad0f70%3A1809553179" target="_blank" rel="noopener noreferrer" class="stock-status in-stock">In stock</a>
+                        <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;" class="stock-status in-stock">In stock</a>
                     </div>
                     <ul>
                         <li class="underline">
-                        <a href="https://www.etsy.com/ca/listing/1809553179/space-goddess-vintage-wash-frayed-t?ref=shop_home_active_4&logging_key=c2aa06a005de62fdcf31d1978e695df372ad0f70%3A1809553179" target="_blank" rel="noopener noreferrer">Space Goddess</a>
+                            <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;">Chappell Roan of Arc - Sweatshirt</a>
                         </li>
                     </ul>
                 </div>
                 <!-- Product 5 -->
                 <div class="project-card">
                     <div class="image-container">
-                        <a href="https://www.etsy.com/ca/listing/1794621728/space-shorts-streetwear-unisex?ref=shop_home_feat_1&logging_key=727db08647bdbb054410785a7441db69e64416ce%3A1794621728" target="_blank" rel="noopener noreferrer">
+                        <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;">
+                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/CenterOfTheUniverseFront.png" alt="space-goddess">
+                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/CenterOfTheUniverseBack.png" alt="space-goddess">
+                        </a>
+                    </div>
+                    <div class="status-container">
+                        <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;" class="stock-status in-stock">In stock</a>
+                    </div>
+                    <ul>
+                        <li class="underline">
+                            <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;">Space Goddess - Oversized T-shirt</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Product 6 -->
+                <div class="project-card">
+                    <div class="image-container">
+                        <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;">
                             <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/SpaceShortsTransparentFront.png" alt="space-shorts">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/SpaceShortsTransparentFront.png" alt="space-shorts">
+                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/space shorts back.png" alt="space-shorts">
+                        </a>
+                    </div>
+                    <div class="status-container">
+                        <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;" class="stock-status in-stock">In stock</a>
+                    </div>
+                    <ul>
+                        <li class="underline">
+                            <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;">Starlight Shorts</a>
+                        </li>
+                    </ul>
+                </div>
+                 <!-- Product 7 -->
+                 <!-- <div class="project-card">
+                    <div class="image-container">
+                        <a href="https://www.etsy.com/ca/listing/1891542801/doja-cat-mooo-snow-washed-crop-top?ref=shop_home_feat_2&logging_key=5daa5cdffa207b08f845bef928a1b68da3af5170%3A1891542801" target="_blank" rel="noopener noreferrer">
+                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Doja shirt front.png" alt="Doja Cat-Crop Top">
+                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Doja shirt back.png" alt="Doja Cat-Crop Top">
                         </a>
                     </div>
                     <div class="status-container">
@@ -129,12 +172,13 @@
                     </div>
                     <ul>
                         <li class="underline">
-                            <a href="https://www.etsy.com/ca/listing/1794621728/space-shorts-streetwear-unisex?ref=shop_home_feat_1&logging_key=727db08647bdbb054410785a7441db69e64416ce%3A1794621728" target="_blank" rel="noopener noreferrer">Space Shorts</a>
+                            <a href="https://www.etsy.com/ca/listing/1794621728/space-shorts-streetwear-unisex?ref=shop_home_feat_1&logging_key=727db08647bdbb054410785a7441db69e64416ce%3A1794621728" target="_blank" rel="noopener noreferrer">Starlight Shorts</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </section>
+    
             <!-- Music Section -->
             <!-- <section id="spotify-widget" class="hidden">
                 <iframe src="https://open.spotify.com/embed/artist/6t0pwOjbOSSqIkIzVaDYtg" width="100%" height="352" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
@@ -148,12 +192,11 @@
                     I created this music video using Adobe Premiere Pro for a song I co-wrote with artists/producers Nathan Chiu and Sammi Morelli. I used footage we had filmed during the pandemic.
                 </p>
             </section> -->
-        </section>
 
         <!-- Contact Section -->
         <section id="contact-section">
             <h2>Contact Me</h2>
-            <form>
+            <form action="https://formsubmit.co/jamesweis16@gmail.com" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
@@ -164,7 +207,7 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-        <p>© 2025 by Koya Merch</p>
+        <p>© 2025 by Koya Collection</p>
     </footer>
 
     <!-- Scripts -->
@@ -172,3 +215,11 @@
     <script src="./resources/scripts/contactForm.js"></script>
 </body>
 </html>
+<!-- Instagram Link -->
+<div style="text-align: center; margin-top: 20px;">
+    <a href="https://www.instagram.com/jamiekoya" target="_blank" rel="noopener noreferrer">
+        <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/instagram-icone-icon.png" alt="Instagram" style="width: 40px; height: 40px;">
+    </a>
+</div>
+<script>
+    </script>

@@ -1,0 +1,86 @@
+/* Confirmation page styles */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body.main-content {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.centered-content {
+    width: 90%;
+    max-width: 600px;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.home-button {
+    font-size: 18px;
+    text-align: center;
+}
+
+.instagram-button img {
+    width: 50px;
+    height: 50px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.navbar {
+    background-color: rgba(51, 51, 51, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar a {
+    display: inline-block;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+}
