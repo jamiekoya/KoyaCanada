@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="./resources/css/styles_contact.css">
+    <link rel="stylesheet" href="./resources/css/styles_body.css">
+</head>
+<body class="main-content">
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" class="home-button">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="centered-content">
+        <h1>Contact Us</h1>
+        <p>If you have any questions or concerns, feel free to reach out to us using the form below or through our social media channels.</p>
+        <form action="submit_contact_form.php" method="POST" class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit" class="button submit-button">Submit</button>
+        </form>
+        <a href="https://www.instagram.com/jamiekoya" target="_blank" class="button instagram-button">
+            <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/instagram-icone-icon.png" alt="Instagram" style="width: 24px; height: 24px;">
+        </a>
+    </div>
+</body>
+</html>
