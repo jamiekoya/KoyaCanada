@@ -79,7 +79,12 @@
         }
     </style>
 </head>
+<script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="9UP8YVT58Q3Z2"></script>
 <body>
+    <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+<script>
+  cartPaypal.Cart({ id: "pp-view-cart" })
+</script>
     <div class="item-container">
         <div class="item-image-container">
             <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/doja cat mooo! - t-shirt.png" alt="island-goddess front" class="item-image">
@@ -88,9 +93,15 @@
         <h1 class="item-title">Doja Cat "Mooo!" - Oversized T-shirt</h1>
         <p class="item-description">Bitch I'm a cow, and you can be too with this oversized Doja Cat T-shirt. Acid washed for a more vintage aesthetic and made with 100% cotton.  </p>
         <p class="item-price">$50.00 CAD</p>
-        <a href="https://www.paypal.com/ncp/payment/9M8DUNU277ANL" target="_blank" class="buy-button">
-            Buy Now with PayPal
+        <!-- <a href="https://www.paypal.com/ncp/payment/9M8DUNU277ANL" target="_blank" class="buy-button">
+            Buy Now with PayPal -->
         </a>
     </div>
 </body>
+<div style="display: flex; justify-content: center; margin-top: 20px;">
+    <paypal-add-to-cart-button data-id="SFQYR9VE62VCN"></paypal-add-to-cart-button>
+</div>
+<script>
+  cartPaypal.AddToCart({ id: "SFQYR9VE62VCN" })
+</script>
 </html>
