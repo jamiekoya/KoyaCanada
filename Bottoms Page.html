@@ -17,6 +17,7 @@
         var paymentUrl = "https://www.paypal.com/ncp/payment/9M8DUNU277ANL";
     </script>
 </head>
+<script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="9UP8YVT58Q3Z2"></script>
 <body>
     <!-- Header and Navigation -->
     <header>
@@ -58,6 +59,10 @@
         <section id="shop">
             <h2 class="section-title">Shop</h2>
             <p class="shop-subheader">All designs created and hand painted by me @jamiekoya. Please give 2-4 weeks for shipping.</p>
+            <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+            <script>
+              cartPaypal.Cart({ id: "pp-view-cart" })
+            </script>
             <div style="text-align: center; font-size: small;">
                 <a href="index.html">All</a>
                 <div style="text-align: center; font-size: small;">
