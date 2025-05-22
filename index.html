@@ -53,12 +53,29 @@
                 </a> -->
             </div>
         </section>
-     
+
         <!-- Shop Section -->
         <section id="shop">
             <h2 class="section-title">Shop</h2>
             <p class="shop-subheader">All designs created and hand painted by me @jamiekoya. Please allow 2-4 weeks for shipping. Shipping cost added during checkout.</p>
             <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <input type="text" id="product-search" placeholder="Search products..." style="padding: 8px; width: 250px; font-size: 16px;">
+            </div>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const searchInput = document.getElementById("product-search");
+                const cards = document.querySelectorAll(".projects-grid .project-card");
+
+                searchInput.addEventListener("input", function() {
+                    const query = searchInput.value.toLowerCase();
+                    cards.forEach(card => {
+                        const text = card.textContent.toLowerCase();
+                        card.style.display = text.includes(query) ? "" : "none";
+                    });
+                });
+            });
+            </script>
 <script>
   cartPaypal.Cart({ id: "pp-view-cart" })
 </script>

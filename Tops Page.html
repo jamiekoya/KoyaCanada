@@ -33,6 +33,7 @@
     <!-- Main Content -->
     <main>
         <!-- Banner Section -->
+        <section style="text-align: center; margin: 20px 0;"></section>
         <section class="banner">
             <h1 id="name">Koya Collection</h1>
         </section>
@@ -62,6 +63,22 @@
             <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
             <script>
               cartPaypal.Cart({ id: "pp-view-cart" })
+            </script>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <input type="text" id="productSearch" placeholder="Search products..." style="padding: 8px; width: 250px; font-size: 16px;">
+            </div>
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const searchInput = document.getElementById('productSearch');
+                const cards = document.querySelectorAll('.projects-grid .project-card');
+                searchInput.addEventListener('input', function() {
+                    const query = this.value.toLowerCase();
+                    cards.forEach(card => {
+                        const text = card.textContent.toLowerCase();
+                        card.style.display = text.includes(query) ? '' : 'none';
+                    });
+                });
+            });
             </script>
             <div style="text-align: center; font-size: small;">
                 <a href="index.html">All</a>
