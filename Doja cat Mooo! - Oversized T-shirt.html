@@ -91,15 +91,67 @@
             <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/doja cat mooo! - t-shirt back.png" alt="island-goddess Back" class="item-image-hover">
         </div>
         <h1 class="item-title">Doja Cat "Mooo!" - Oversized T-shirt</h1>
-        <p class="item-description">Bitch I'm a cow and you can be one too with this oversized Doja Cat T-shirt. Acid washed for a more vintage aesthetic and made with 100% cotton.  </p>
-        <p class="item-price">$50.00 CAD</p>
+        <p class="item-description">Bitch I'm a cow and you can be one too with this oversized Doja Cat T-shirt. Acid washed for a more vintage aesthetic and made with 100% cotton.</p>
+        <!-- <p class="item-price">$50.00 CAD</p> -->
         <!-- <a href="https://www.paypal.com/ncp/payment/9M8DUNU277ANL" target="_blank" class="buy-button">
             Buy Now with PayPal -->
-        </a>
+        <!-- </a>
     </div>
-</body>
+</body> 
 <paypal-add-to-cart-button data-id="SFQYR9VE62VCN"></paypal-add-to-cart-button>
 <script>
   cartPaypal.AddToCart({ id: "SFQYR9VE62VCN" })
 </script>
+    <!-- Currency Selector -->
+    <div style="text-align: right; margin-bottom: 20px;">
+        <label for="currency-select">View prices in:</label>
+        <select id="currency-select">
+          <option value="CAD" selected>CAD</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="NZD">NZD</option>
+        </select>
+    </div>
+    <!-- Product Price (for currency conversion) -->
+    <div class="project-card">
+        <span class="price" data-cad-price="50">$50.00 CAD</span>
+    </div>
+    <script>
+    const rates = {
+        CAD: 1,
+        USD: 0.73,
+        EUR: 0.67,
+        GBP: 0.57,
+        NZD: 1.20
+    };
+    const currencySymbols = {
+        CAD: '$',
+        USD: '$',
+        EUR: '€',
+        GBP: '£',
+        NZD: '$'
+    };
+    function updatePrices() {
+        const currency = document.getElementById('currency-select').value;
+        document.querySelectorAll('.project-card').forEach(card => {
+          const priceEl = card.querySelector('.price');
+          if (!priceEl) return;
+          // Store original CAD price in a data attribute if not already set
+          if (!priceEl.dataset.cadPrice) {
+            const cadPrice = parseFloat(priceEl.textContent.replace(/[^0-9.]/g, ''));
+            if (!isNaN(cadPrice)) {
+                priceEl.dataset.cadPrice = cadPrice;
+            }
+          }
+          const cadPrice = parseFloat(priceEl.dataset.cadPrice);
+          if (isNaN(cadPrice)) return;
+          const converted = (cadPrice * rates[currency]).toFixed(2);
+          priceEl.textContent = `${currencySymbols[currency]}${converted} ${currency}`;
+        });
+    }
+    document.getElementById('currency-select').addEventListener('change', updatePrices);
+    // Initial update
+    updatePrices();
+        </script>
 </html>
