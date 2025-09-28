@@ -1,9 +1,3 @@
-/* Home page styles */
-body {
-    margin: 0;
-    overflow-x: hidden;
-}
-
 /* Resetting default margins and paddings */
 * {
     margin: 0;
@@ -451,3 +445,34 @@ section {
         font-size: 0.55rem;
     }
 }
+/* Tighten space between banner and Shop */
+.banner {
+    padding-bottom: 20px;        /* was 60px */
+    margin-bottom: 0;            /* ensure no extra gap */
+  }
+  
+  /* Reduce the default section padding just for the Shop section */
+  #shop {
+    padding-top: 20px;           /* was 60px via the generic section rule */
+  }
+  
+  /* Remove extra top padding added on the Shop title */
+  #shop .section-title {
+    padding-top: 0;              /* was 100px */
+    margin-top: 0;
+  }
+  
+  /* Optional: if you want the subheader closer to the title too */
+  #shop .shop-subheader {
+    margin-top: 8px;             /* bring it nearer to the H2 */
+    padding-bottom: 40px;        /* was 100px */
+  }
+  
+  /* Mobile tweaks to keep things consistent */
+  @media (max-width: 768px) {
+    .banner { padding-bottom: 12px; }
+    #shop { padding-top: 12px; }
+    #shop .section-title { padding-top: 0; }
+    #shop .shop-subheader { padding-bottom: 20px; }
+  }
+  
