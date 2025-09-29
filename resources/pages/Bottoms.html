@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <base href="../">
   <title>Koya Collection — Bottoms</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Hand-painted bottoms by Koya Collection. Shop shorts and more." />
   <link rel="icon" href="https://koyacanadawebsite.blob.core.windows.net/websiteimages/JamesWebsiteIcon.png" />
   <!-- styles: this page is in resources/pages/, so go up one level -->
-  <link rel="stylesheet" href="../css/styles_home.css">
-  <link rel="stylesheet" href="../css/styles_body.css">
+  <link rel="stylesheet" href="css/styles_home.css">
+  <link rel="stylesheet" href="css/styles_body.css">
   <link href="https://fonts.googleapis.com/css2?family=Abel&family=Source+Code+Pro&display=swap" rel="stylesheet" />
 
   <!-- PayPal Cart -->
@@ -76,11 +77,11 @@
 
       <!-- Category links + size guide -->
       <div class="links-row" aria-label="Categories and Size Guide">
-        <a class="pill" href="../../index.html">All</a>
-        <a class="pill" href="../pages/Tops.html">Tops</a>
-        <a class="pill" href="../pages/Bottoms.html" aria-current="page">Bottoms</a>
-        <a class="pill" href="../pages/SweatshirtsAndHoodies.html">Sweatshirts &amp; Hoodies</a>
-        <a class="pill" href="../pages/misc/SizeGuide.html" target="_blank" rel="noopener noreferrer">Size Guide</a>
+        <a class="pill" href="../index.html">All</a>
+        <a class="pill" href="pages/Tops.html">Tops</a>
+        <a class="pill" href="pages/Bottoms.html" aria-current="page">Bottoms</a>
+        <a class="pill" href="pages/SweatshirtsAndHoodies.html">Sweatshirts &amp; Hoodies</a>
+        <a class="pill" href="pages/misc/SizeGuide.html" target="_blank" rel="noopener noreferrer">Size Guide</a>
       </div>
 
       <!-- Products (kept as your Bottoms: Hibiscus Shorts + Starlight Shorts) -->
@@ -88,16 +89,16 @@
         <!-- Hibiscus Shorts -->
         <article class="project-card">
           <div class="image-container">
-            <a href="Hibiscus Shorts Page.html">
+            <a href="pages\shorts\HibiscusShorts.html">
               <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/hibiscus shorts front.png" alt="Hibiscus Shorts, front">
               <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/hibiscus shorts back.png"  alt="Hibiscus Shorts, back">
             </a>
           </div>
           <div class="status-container">
-            <a href="Hibiscus Shorts Page.html" class="stock-status in-stock">In stock</a>
+            <a href="pages\shorts\HibiscusShorts.html" class="stock-status in-stock">In stock</a>
           </div>
           <ul>
-            <li class="product-title"><a href="Hibiscus Shorts Page.html">Hibiscus Shorts</a></li>
+            <li class="product-title"><a href="pages\shorts\HibiscusShorts.html">Hibiscus Shorts</a></li>
             <li class="price" data-cad-price="40">$40 CAD</li>
           </ul>
         </article>
@@ -105,16 +106,16 @@
         <!-- Starlight Shorts -->
         <article class="project-card">
           <div class="image-container">
-            <a href="Starlight Shorts Page.html">
+            <a href="pages\shorts\StarlightShorts.html">
               <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/SpaceShortsTransparentFront.png" alt="Starlight Shorts, front">
               <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/SpaceShortsTransparentBack.png"  alt="Starlight Shorts, back">
             </a>
           </div>
           <div class="status-container">
-            <a href="Starlight Shorts Page.html" class="stock-status in-stock">In stock</a>
+            <a href="pages\shorts\StarlightShorts.html" class="stock-status in-stock">In stock</a>
           </div>
           <ul>
-            <li class="product-title"><a href="Starlight Shorts Page.html">Starlight Shorts</a></li>
+            <li class="product-title"><a href="pages\shorts\StarlightShorts.html">Starlight Shorts</a></li>
             <li class="price" data-cad-price="40">$40 CAD</li>
           </ul>
         </article>
@@ -155,8 +156,8 @@
   <!-- Footer -->
   <footer class="site-footer">
     <p>© 2025 by Koya Collection</p>
-    <p><a href="../pages/misc/TermsOfService.html">Terms of Service</a></p>
-    <p><a href="../pages/misc/RefundPolicy.html">Refund Policy</a></p>
+    <p><a id="terms" href="pages\misc\TermsOfService.html" target="_blank" rel="noopener noreferrer">Terms of Service</a></p>
+    <p><a id="refund-policy" href="pages\misc\RefundPolicy.html" target="_blank" rel="noopener noreferrer">Refund Policy</a></p>
   </footer>
 
   <!-- Scripts -->
