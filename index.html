@@ -78,7 +78,7 @@
         <!-- 1. Chappell Roan Tee -->
         <article class="project-card">
           <div class="image-container">
-            <a href="Chappell%20Roan%20of%20Arc%20T-shirt.html">
+            <a href="/resources/pages/shirts/Chappell Roan of Arc T-shirt.html">
               <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanShirtTransparentFront.png" alt="Chappell Roan of Arc Oversized T-shirt, front" />
               <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanShirtTransparentBack.png"  alt="Chappell Roan of Arc Oversized T-shirt, back" />
             </a>
@@ -419,8 +419,8 @@
   <!-- Footer -->
   <footer class="site-footer">
     <p>© 2025 by Koya Collection</p>
-    <p><a id="terms" href="resources/pages/misc/TermsOfService.html">Terms of Service</a></p>
-    <p><a id="refund-policy" href="resources/pages/misc/RefundPolicy.html">Refund Policy</a></p>
+    <p><a id="terms" href="resources/pages/misc/TermsOfService.html" target="_blank" rel="noopener noreferrer">Terms of Service</a></p>
+    <p><a id="refund-policy" href="resources/pages/misc/RefundPolicy.html" target="_blank" rel="noopener noreferrer">Refund Policy</a></p>
   </footer>
 
   <!-- Scripts -->
@@ -468,6 +468,15 @@
       updatePrices();
     })();
   </script>
+
+<script>
+  document
+    .querySelectorAll('.projects-grid a[href]')
+    .forEach(a => {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    });
+</script>
 
   <!-- a11y helpers -->
   <style>

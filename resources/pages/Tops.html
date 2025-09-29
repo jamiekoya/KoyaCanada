@@ -356,5 +356,14 @@
       updatePrices();
     })();
   </script>
+
+<script>
+  document
+    .querySelectorAll('.projects-grid a[href]')
+    .forEach(a => {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    });
+</script>
 </body>
 </html>

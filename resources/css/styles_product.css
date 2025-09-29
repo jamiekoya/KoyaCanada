@@ -1,0 +1,148 @@
+html, body {
+    height: 100%;
+  }
+  
+  .product-page {
+    min-height: 100dvh;               
+    display: grid;
+    place-items: center;             
+    padding: 40px 20px;
+  }
+  
+  .product-toolbar-row {
+    display: flex;
+    flex-direction: row;   /* not row-reverse */
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+
+.product-toolbar-row .project-card { order: 2; }
+.product-toolbar-row .product-toolbar { order: 1; }
+  
+  /* ---- Card ---- */
+  .item-container {
+    width: 100%;
+    max-width: 680px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    padding: 28px;
+    box-shadow: 0 8px 28px rgba(0,0,0,.08);
+  }
+  
+  /* ---- Image (swap on hover) ---- */
+  .item-image-container {
+    position: relative;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    aspect-ratio: 1 / 1;            
+    background: #f6f7f8;
+    max-width: 520px;                 /* keeps image from getting too wide */
+  }
+  
+  .item-image,
+  .item-image-hover {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;                 /* neat crop */
+    transition: transform .3s ease, opacity .3s ease;
+  }
+  
+  .item-image-hover {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+  
+  .item-image-container:hover .item-image,
+  .item-image-container:hover .item-image-hover {
+    transform: scale(1.05);
+  }
+  .item-image-container:hover .item-image { opacity: 0; }
+  .item-image-container:hover .item-image-hover { opacity: 1; }
+  
+  /* ---- Text ---- */
+  .item-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin: 0 0 18px;
+    padding: 0 6px;                   
+  }
+  
+  /* ---- Price ---- */
+  .project-card {
+    margin: 0;                     
+    padding: 0;                     
+  }
+
+    .project-card .price {
+    font-size: 22px;
+    font-weight: 800;
+    color: #111;
+    text-align: center;
+    margin: 0;                      
+    }
+  
+  /* ---- Actions ---- */
+  .buy-row,
+  .currency-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 12px 0;
+  }
+  
+  .currency-row label {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .currency-select {
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+
+  /* --- Fix PayPal buttons layout --- */
+
+/* Make the toolbar row horizontal */
+.product-toolbar,
+.buy-row {
+  display: flex;
+  justify-content: center;   
+  align-items: center;
+  flex-wrap: wrap;          
+  gap: 12px;                 
+  margin: 12px 0;
+}
+
+/* Force PayPal elements to behave like buttons, not inline text */
+paypal-add-to-cart-button,
+paypal-cart-button {
+  display: inline-block !important;
+  width: auto !important;
+  min-width: 160px;         
+  text-align: center;
+  color: #111;
+}
+
+  paypal-add-to-cart-button,
+  paypal-cart-button {
+    transform: translateZ(0); /* avoids odd subpixel jitter on some browsers */
+  }
+  
+  /* ---- Respect reduced motion ---- */
+  @media (prefers-reduced-motion: reduce) {
+    .item-image, .item-image-hover { transition: none; }
+  }
+  
