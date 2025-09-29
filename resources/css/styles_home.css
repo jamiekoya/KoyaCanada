@@ -261,7 +261,7 @@
    /* Inputs/Textareas/Buttons */
    #contact-section input,
    #contact-section textarea {
-     padding: 12px;
+     padding: 16px;
      font-size: 0.65rem;
      border: 1px solid #ccc;
      border-radius: 5px;
