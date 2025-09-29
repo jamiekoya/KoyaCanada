@@ -370,7 +370,7 @@
     
 
    }
-   
+
 @media (max-width: 768px) {
 
   /* ─── Buttons / Pills ─── */
@@ -474,3 +474,59 @@
     }
   }
 }
+
+/* TIGHTEN PRICE POSITIONING UNDER IMAGE ON MOBILE */
+@media (max-width: 768px) {
+
+  .project-card .image-container {
+    margin-bottom: 15px !important; 
+  }
+
+  .project-card .product-title a {
+    margin-bottom: 2px !important;
+  }
+
+  .project-card .price {
+    display: block;
+    font-size: 0.75rem !important;      
+    margin-top: 4px !important;      
+    margin-bottom: 6px !important;       
+    line-height: 1.2 !important;
+  }
+
+  .project-card li {
+    padding-top: 5px !important;
+  }
+}
+
+/* CONSISTENT DESCRIPTION HEIGHT + PRICE POSITION ON MOBILE */
+@media (max-width: 768px) {
+
+  .project-card .product-description,
+  .project-card .product-title a {          
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2;                 
+    -webkit-box-orient: vertical;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+
+    font-size: 0.65rem !important;         
+    line-height: 1.3 !important;
+    max-height: 2.6em !important;           
+    min-height: 2.6em !important;
+    margin-bottom: 6px !important;         
+  }
+
+  .project-card .image-container {
+    margin-bottom: 10px !important;
+  }
+
+  .project-card .price {
+    display: block;
+    font-size: 0.75rem !important; 
+    line-height: 1.2 !important;
+    margin-top: 4px !important;         
+    margin-bottom: 6px !important;          
+  }
+}
+
