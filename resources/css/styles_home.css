@@ -367,5 +367,110 @@
    
     .site-footer p { font-size: 0.55rem; }
 
+    
+
    }
    
+@media (max-width: 768px) {
+
+  /* ─── Buttons / Pills ─── */
+  .pill,
+  .links-row a,
+  .site-footer a {
+    padding: 4px 8px !important;   
+    font-size: 0.55rem !important; 
+    border-radius: 999px;
+  }
+
+  .links-row {
+    gap: 6px !important;
+    margin: 6px 0 12px !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* ─── Toolbar Buttons ─── */
+  .shop-toolbar,
+  .toolbar-row {
+    gap: 6px !important;
+  }
+
+  .search-input,
+  .select {
+    padding: 4px 6px !important;
+    font-size: 0.55rem !important;
+  }
+
+  /* ─── Product Title — Limit to 2 lines ─── */
+  .project-card .product-title a {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;          
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.65rem !important;  
+    line-height: 1.2;
+    max-height: 2.4em;              
+  }
+
+  /* .project-card .price {
+    font-size: 0.55rem !important;
+  } */
+
+  /* ─── Footer Buttons / Socials ─── */
+  .socials img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .site-footer p {
+    font-size: 0.5rem !important;
+  }
+
+    /* REFINE TOOLBAR + PRICE SPACING ON MOBILE */
+  @media (max-width: 768px) {
+
+    .search-input,
+    .select {
+      padding: 6px 10px !important;   
+      font-size: 0.65rem !important;   
+      min-width: 120px;             
+    }
+
+    .toolbar-row {
+      flex-wrap: wrap;
+      gap: 10px !important;           
+      justify-content: center;
+    }
+
+    .project-card .price {
+      font-size: 0.65rem !important;
+      margin-top: 4px !important;
+      display: inline-block;
+    }
+
+    .project-card .product-title a {
+      margin-bottom: 2px;
+    }
+  }
+
+    /* SHOP TITLE + SUBHEADER ADJUSTMENTS ON MOBILE */
+  @media (max-width: 768px) {
+
+    #shop .section-title {
+      padding-top: 20px !important; 
+      margin-top: 15px !important;
+      margin-bottom: 15px !important;
+      font-size: 1.8rem !important;  
+    }
+
+    #shop .shop-subheader {
+      font-size: 0.75rem !important;  
+      line-height: 1.4;
+      max-width: 85%;                 
+      padding-bottom: 20px !important;
+
+      margin: 10px auto 25px !important;
+    }
+  }
+}
