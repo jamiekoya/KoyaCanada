@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Koya Collection — Bottoms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hand-painted bottoms by Koya Collection. Shop shorts and more." />
+  <link rel="icon" href="https://koyacanadawebsite.blob.core.windows.net/websiteimages/JamesWebsiteIcon.png" />
+  <!-- styles: this page is in resources/pages/, so go up one level -->
+  <link rel="stylesheet" href="../css/styles_home.css">
+  <link rel="stylesheet" href="../css/styles_body.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Source+Code+Pro&display=swap" rel="stylesheet" />
+
+  <!-- PayPal Cart -->
+  <script defer src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="9UP8YVT58Q3Z2"></script>
+  <script>
+    const paymentUrl = "https://www.paypal.com/ncp/payment/9M8DUNU277ANL";
+  </script>
+
+  <!-- a11y helpers -->
+  <style>
+    .visually-hidden {
+      position: absolute !important;
+      height: 1px; width: 1px; overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap; border: 0; padding: 0; margin: -1px;
+    }
+  </style>
+</head>
+<body>
+  <a class="visually-hidden" href="#shop">Skip to Shop</a>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar" aria-label="Primary">
+      <ul>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#contact-section">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Banner -->
+    <section class="banner" aria-label="Koya Collection banner">
+      <h1 id="name">Koya Collection</h1>
+    </section>
+
+    <!-- Shop -->
+    <section id="shop" aria-labelledby="shop-title">
+      <h2 id="shop-title" class="section-title">Bottoms</h2>
+      <p class="shop-subheader">
+        All designs created and hand painted by me @jamiekoya. Please allow 2–4 weeks for shipping.
+      </p>
+
+      <!-- Toolbar: cart + search + currency -->
+      <div class="shop-toolbar" role="group" aria-label="Shop tools">
+        <div class="toolbar-row">
+          <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+
+          <label>
+            <span class="visually-hidden">Search products</span>
+            <input id="product-search" class="search-input" type="search" placeholder="Search products…" autocomplete="off" />
+          </label>
+
+          <label for="currency-select">View prices in:</label>
+          <select id="currency-select" class="select" aria-label="Currency">
+            <option value="CAD" selected>CAD</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="NZD">NZD</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Category links + size guide -->
+      <div class="links-row" aria-label="Categories and Size Guide">
+        <a class="pill" href="../../index.html">All</a>
+        <a class="pill" href="../pages/Tops.html">Tops</a>
+        <a class="pill" href="../pages/Bottoms.html" aria-current="page">Bottoms</a>
+        <a class="pill" href="../pages/SweatshirtsAndHoodies.html">Sweatshirts &amp; Hoodies</a>
+        <a class="pill" href="../pages/misc/SizeGuide.html" target="_blank" rel="noopener noreferrer">Size Guide</a>
+      </div>
+
+      <!-- Products (kept as your Bottoms: Hibiscus Shorts + Starlight Shorts) -->
+      <div class="projects-grid">
+        <!-- Hibiscus Shorts -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="Hibiscus Shorts Page.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/hibiscus shorts front.png" alt="Hibiscus Shorts, front">
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/hibiscus shorts back.png"  alt="Hibiscus Shorts, back">
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="Hibiscus Shorts Page.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="Hibiscus Shorts Page.html">Hibiscus Shorts</a></li>
+            <li class="price" data-cad-price="40">$40 CAD</li>
+          </ul>
+        </article>
+
+        <!-- Starlight Shorts -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="Starlight Shorts Page.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/SpaceShortsTransparentFront.png" alt="Starlight Shorts, front">
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/SpaceShortsTransparentBack.png"  alt="Starlight Shorts, back">
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="Starlight Shorts Page.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="Starlight Shorts Page.html">Starlight Shorts</a></li>
+            <li class="price" data-cad-price="40">$40 CAD</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact-section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact Me</h2>
+      <form action="https://formsubmit.co/jamiekoya00@gmail.com" method="POST">
+        <label class="visually-hidden" for="name">Your Name</label>
+        <input class="input" id="name" name="name" type="text" placeholder="Your Name" required />
+        <label class="visually-hidden" for="email">Your Email</label>
+        <input class="input" id="email" name="email" type="email" placeholder="Your Email" required />
+        <label class="visually-hidden" for="message">Your Message</label>
+        <textarea class="textarea" id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+        <button class="button" type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Socials -->
+  <nav class="socials" aria-label="Social media">
+    <a href="https://www.instagram.com/jamiekoya" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/instagram-icone-icon.png" alt="Instagram" />
+    </a>
+    <a href="https://www.tiktok.com/@jamiekoya" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+      <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/logo-tiktok-icone-1536.png" alt="TikTok" />
+    </a>
+    <a href="https://www.youtube.com/@JamieKoya" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/youtube logo button.png" alt="YouTube" />
+    </a>
+    <a href="https://linktr.ee/Jamiekoya?utm_source=linktree_admin_share" target="_blank" rel="noopener noreferrer" aria-label="Linktree">
+      <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/all my links icon 2.png" alt="Linktree" />
+    </a>
+  </nav>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2025 by Koya Collection</p>
+    <p><a href="../pages/misc/TermsOfService.html">Terms of Service</a></p>
+    <p><a href="../pages/misc/RefundPolicy.html">Refund Policy</a></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize PayPal cart once cart script is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.cartPaypal && typeof cartPaypal.Cart === 'function') {
+        cartPaypal.Cart({ id: "pp-view-cart" });
+      }
+    });
+
+    // Product search
+    (function initSearch(){
+      const searchInput = document.getElementById('product-search');
+      if (!searchInput) return;
+      const cards = Array.from(document.querySelectorAll('.projects-grid .project-card'));
+      searchInput.addEventListener('input', () => {
+        const q = searchInput.value.trim().toLowerCase();
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          card.style.display = text.includes(q) ? '' : 'none';
+        });
+      });
+    })();
+
+    // Currency selector
+    (function initCurrency(){
+      const rates = { CAD: 1, USD: 0.73, EUR: 0.67, GBP: 0.57, NZD: 1.20 };
+      const symbols = { CAD: '$', USD: '$', EUR: '€', GBP: '£', NZD: '$' };
+      const select = document.getElementById('currency-select');
+      if (!select) return;
+
+      function updatePrices() {
+        const currency = select.value;
+        document.querySelectorAll('.price').forEach(el => {
+          const cad = parseFloat(el.getAttribute('data-cad-price'));
+          if (Number.isFinite(cad)) {
+            const converted = (cad * (rates[currency] || 1)).toFixed(2);
+            el.textContent = `${symbols[currency] || ''}${converted} ${currency}`;
+          }
+        });
+      }
+      select.addEventListener('change', updatePrices);
+      updatePrices();
+    })();
+  </script>
+</body>
+</html>
