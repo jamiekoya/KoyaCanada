@@ -1,478 +1,344 @@
-/* Resetting default margins and paddings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* =======================
+   Global Reset & Type
+   ======================= */
+   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-h1, h2, h3, h4 {
-    /* font-family: 'Source Code Pro', monospace; */
-    font-weight: 400;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin: 0;
-}
+   html, body { height: 100%; }
+   
+   body {
+     font-family: 'Source Code Pro', monospace;
+     color: #fff;
+     background: #000;
+     overflow-x: hidden;
+   }
+   
+   a { color: inherit; text-decoration: none; }
+   img { display: block; max-width: 100%; }
+   
+   h1, h2, h3, h4 {
+     font-weight: 400;
+     letter-spacing: 1.5px;
+     text-transform: uppercase;
+     margin: 0;
+   }
+   
+   p, li, ul {
+     text-transform: uppercase;
+     font-size: 0.85rem;
+     line-height: 1.6;
+   }
+   
+   ul { list-style: none; }
+   
+   button { letter-spacing: 1px; box-sizing: border-box; }
+   
+   /* =======================
+      Navbar
+      ======================= */
+   .navbar ul {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+     padding: 0.1rem;
+     gap: 1rem;
+   }
+   .navbar li { display: inline; }
+   .navbar a {
+     color: #fff;
+     padding: 0.5rem;
+     border-radius: 5px;
+     transition: background-color .3s;
+     font-size: 1rem;
+   }
+   
+   /* =======================
+      Banner
+      ======================= */
+   .banner {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     position: relative;
+     padding: 120px 20px 20px; /* tightened bottom space */
+     text-align: center;
+     color: #fff;
+     margin: 60px 0 0 0;
+     background: transparent url('https://koyacanadawebsite.blob.core.windows.net/websiteimages/chappell knight Shattered light 6.png') center/cover no-repeat;
+     z-index: 1;
+     width: 100%;
+     border-radius: 10px;
+   }
+   #name { font-size: 4.75rem; letter-spacing: 7px; }
+   
+   /* =======================
+      Sections
+      ======================= */
+   section { padding: 60px 20px; }
+   .section-title {
+     text-align: center;
+     margin-bottom: 20px;
+     font-size: 3rem;
+     padding-top: 100px;
+   }
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-p, li, ul {
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    line-height: 1.6;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button {
-    /* font-family: 'Abel', sans-serif; */
-    letter-spacing: 1px;
-    box-sizing: border-box;
-}
-
-.navbar ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 0.1rem; 
-    gap: 1rem;
-}
-
-.navbar li {
-    display: inline;
-}
-
-.navbar a {
-    color: white;
-    padding: 0.5rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    font-size: 1rem;
-}
-
-
-/* Banner Styles */
-.banner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    padding: 120px 20px 60px; /* Combined padding value */
+   .shop-subheader {
     text-align: center;
-    color: white;
-    margin: 60px 0 0 0;
-    background-color: transparent;
-    background-image: url('https://koyacanadawebsite.blob.core.windows.net/websiteimages/chappell knight Shattered light 6.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1;
-    width: 100%; 
-    border-radius: 10px;
-}
-
-#name {
-    font-size: 4.75rem;
-    letter-spacing: 7px;
-}
-
-#about-me-section h2 {
-    text-align: center;
-}
-
-section {
-    padding: 60px 20px;
-}
-
-/* Centered Section Titles */
-.section-title {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 3rem;
-    padding-top: 100px;
-}
-
-.shop-subheader{
-    text-align: center;
-    padding-bottom: 100px;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.container img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.content {
-    flex: 1;
-    max-width: 600px;
-}
-
-.content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.content p {
-    margin-bottom: 0;
-}
-
-/* Projects Grid */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 10px; 
-    row-gap: 20px;    
-    max-width: 1200px; 
-    margin: 0 auto;   
-}
-
-.underline {
-    text-decoration: none; 
-    text-decoration-thickness: 3px;
-    padding-top: 15px;
-}
-
-.underline:hover {
+    max-width: 60ch;           
+    margin: 0 auto 40px;       
+    font-size: 0.95rem;       
+    line-height: 1.6;         
+    opacity: .9;               
+    white-space: normal;       
+    padding-bottom: 40px;    
+  }
+   
+   /* Tighten just the Shop area spacing */
+   #shop { padding-top: 20px; }
+   #shop .section-title { padding-top: 0; margin-top: 0; }
+   #shop .shop-subheader { margin-top: 8px; padding-bottom: 40px; }
+   
+   /* =======================
+      Containers & Content
+      ======================= */
+   .container {
+     display: flex; flex-wrap: wrap;
+     justify-content: center; align-items: flex-start;
+     gap: 40px; max-width: 1200px; margin: 0 auto;
+   }
+   .container img {
+     width: 100%; max-width: 400px; border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(0,0,0,.3);
+   }
+   .content { flex: 1; max-width: 600px; }
+   .content h2 { font-size: 2.5rem; margin-bottom: 20px; }
+   .content p { margin-bottom: 0; }
+   
+   /* =======================
+      Shop: Toolbar (Cart + Search + Currency)
+      ======================= */
+   .shop-toolbar { display: grid; gap: 12px; justify-items: center; margin-bottom: 16px; }
+   .toolbar-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+   
+   /* Search input */
+   .search-input {
+     background: transparent;
+     color: #fff;
+     border: 1px solid #555;
+     padding: 8px 10px;
+     border-radius: 6px;
+     font: inherit;
+   }
+   .search-input::placeholder { color: #fff; }
+   .search-input:hover { border-color:  #6e6e6e; }
+   .search-input:focus { outline: none; box-shadow: 0 0 0 2px rgba(255,255,255,.25); }
+   
+   /* Currency <select> (button visuals) */
+   .select {
+     appearance: none;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+   
+     background-color: transparent;   /* transparent base */
+     color: #fff;
+     border: 1px solid #555;
+     border-radius: 6px;
+     padding: 8px 32px 8px 12px;       /* room for arrow */
+     font: inherit;
+     cursor: pointer;
+   
+     /* custom arrow */
+     background-image:
+       url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1l5 5 5-5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+     background-repeat: no-repeat;
+     background-position: right 10px center;
+     background-size: 12px;
+   }
+   .select:hover { border-color:  #6e6e6e; }
+   .select:focus { outline: none; box-shadow: 0 0 0 2px rgba(255,255,255,.25); }
+   
+   /* Make the dropdown panel itself dark/transparent */
+   .select option {
+     background-color: rgba(0,0,0,.7);
+     color: #fff;
+   }
+   
+   /* =======================
+      Projects Grid / Product Cards
+      ======================= */
+   .projects-grid {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     column-gap: 10px;
+     row-gap: 20px;
+     max-width: 1200px;
+     margin: 0 auto;
+   }
+   
+   .underline { text-decoration: none; text-decoration-thickness: 3px; padding-top: 15px; }
+   .underline:hover { text-decoration: underline; }
+   
+   .project-card {
+     display: flex; flex-direction: column; align-items: center;
+     background: none; border-radius: 10px; padding: 20px;
+     width: 100%; max-width: 400px; box-sizing: border-box; text-align: center;
+   }
+   .status-container { width: 100%; text-align: left; }
+   .stock-status {
+     display: inline-block; padding: 4px 10px; color: #fff;
+     font-size: .65rem; background: rgba(0,0,0,.5); border-radius: 50px;
+   }
+   
+   .project-card ul { width: 100%; padding: 0; margin-top: 0; text-align: center; list-style: none; }
+   .project-card li { margin-top: 0; }
+   
+   .project-card .image-container {
+     width: 100%; position: relative; overflow: hidden;
+     border-radius: 10px; margin-bottom: 15px;
+   }
+   .project-card .image-container::before { content: ""; display: block; padding-top: 80.25%; }
+   
+   .project-card img {
+     position: absolute; top: 0; left: 0;
+     width: 100%; height: 100%; object-fit: cover;
+     transition: opacity .25s, transform .25s;
+   }
+   .project-card .image-container img.front { opacity: 1; z-index: 2; }
+   .project-card .image-container img.back  { opacity: 0; z-index: 1; }
+   
+   .project-card:hover .image-container img.front { opacity: 0; }
+   .project-card:hover .image-container img.back  { opacity: 1; }
+   .project-card:hover .image-container img { transform: scale(1.05); }
+   .project-card:hover .product-title a {
     text-decoration: underline;
-}
-
-/* Box color*/
-.project-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: none;
-    border-radius: 10px;
-    padding: 20px;
-    width: 100%;
-    max-width: 400px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.status-container {
-    width: 100%; 
-    text-align: left;
-}
-
-.stock-status {
-    display: inline-block; 
-    padding: 4px 10px;
-    color: white;
-    font-size: 0.65rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50px;
-}
-
-.project-card ul {
-    width: 100%;
-    padding: 0;
-    margin-top: 0;
-    text-align: center; 
-    list-style-type: none;
-}
-.project-card li {
-    margin-top: 0px; 
-}
-
-.project-card .image-container {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.project-card .image-container::before {
-    content: "";
-    display: block;
-    padding-top: 80.25%;
-}
-
-.project-card img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.project-card .image-container img.front {
-    opacity: 1;
-    z-index: 2;
-}
-
-/* Underline the link inside the li when hovering over the image container */
-.image-container:hover ~ ul li.underline a {
-    text-decoration: underline;
-}
-
-.project-card .image-container img.back {
-    opacity: 0;
-    z-index: 1;
-}
-
-/* When hovering over the container, swap the images */
-.project-card:hover .image-container img.front {
-    opacity: 0;
-}
-
-.project-card:hover .image-container img.back {
-    opacity: 1;
-}
-
-.project-card:hover .image-container img {
-    transform: scale(1.05);
-}
-
-/* Media Section */
-#spotify-widget,
-#video-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-}
-
-#spotify-widget iframe,
-#video-section iframe {
-    width: 100%;
-    max-width: 600px;
-    height: 350px;
-    border: none;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-#spotify-widget iframe {
-    height: 450px;
-}
-
-#spotify-widget aside,
-#video-section aside,
-#spotify-widget p,
-#video-section p {
-    width: 100%;
-    max-width: 600px;
-    margin: 0;
-    text-align: center;
-}
-
-/* Contact Section */
-#contact-section {
-    padding-top: 150px;
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-#contact-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-#contact-section form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-#contact-section input,
-#contact-section textarea {
-    padding: 12px;
-    font-size: 0.65rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: 'Source Code Pro', monospace;
-}
-
-#contact-section button {
-    padding: 12px;
-    font-size: 1rem;
-    border: 2px solid #ccc;
-    background-color: transparent;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#contact-section button:hover {
-    background-color: gray;
-}
-
-/* Footer Styles */
-.site-footer {
-    background-color: #333;
-    opacity: 0.5;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-.site-footer p {
-    margin: 0;
-    font-size: 1rem;
-    letter-spacing: 1.1px;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    /* Hide Navbar on Mobile Devices */
-    .navbar {
-        display: none;
-    }
-
-    .banner {
-        padding: 60px 20px;
-        margin-top: 0;
-        top: 0;
-        left: 0;
-        width: 100%;
-        border-radius: 0;
-        height: auto; 
-        margin-bottom: 0;
-    }
-    
-    /* Banner */
-    #name {
-        font-size: 1.2rem;
-    }
-
-    /* Content Adjustments */
-    .container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .content h2 {
-        font-size: 2rem;
-    }
-
-    p, li, ul {
-        font-size: 0.55rem;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-        padding-top: 25px;
-    }
-
-    .shop-subheader{
-        text-align: center;
-        font-size: 0.4rem;
-        padding-bottom: 25px;
-    }
-
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        margin: 20px auto; 
-        padding: 0 10px;   
-    }
-
-    /* Projects Grid */
-    .project-card {
-        max-width: 100%;
-    }
-
-    .project-card li{
-        padding-top: 25px;
-    }
-
-    .stock-status {
-        display: inline-block; 
-        padding: 4px 10px;
-        color: white;
-        font-size: 0.25rem;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 50px;
-    }
-
-    .project-card .image-container {
-        height: 100px; /* Adjust the height for smaller screens if needed */
-    }
-
-    /* Media Section */
-    #spotify-widget iframe,
-    #video-section iframe {
-        height: 200px;
-    }
-
-    #contact-section{
-        padding-top: 25px;
-        max-width: 250px;
-    }
-
-    /* Contact Section */
-    #contact-section h2 {
-        font-size: 1.0rem;
-    }
-
-    #contact-section input,
-    #contact-section textarea {
-        font-size: 0.5rem;
-    }
-
-    #contact-section button {
-        font-size: 0.5rem;
-    }
-
-    /* Footer */
-    .site-footer p {
-        font-size: 0.55rem;
-    }
-}
-/* Tighten space between banner and Shop */
-.banner {
-    padding-bottom: 20px;        /* was 60px */
-    margin-bottom: 0;            /* ensure no extra gap */
   }
-  
-  /* Reduce the default section padding just for the Shop section */
-  #shop {
-    padding-top: 20px;           /* was 60px via the generic section rule */
-  }
-  
-  /* Remove extra top padding added on the Shop title */
-  #shop .section-title {
-    padding-top: 0;              /* was 100px */
-    margin-top: 0;
-  }
-  
-  /* Optional: if you want the subheader closer to the title too */
-  #shop .shop-subheader {
-    margin-top: 8px;             /* bring it nearer to the H2 */
-    padding-bottom: 40px;        /* was 100px */
-  }
-  
-  /* Mobile tweaks to keep things consistent */
-  @media (max-width: 768px) {
-    .banner { padding-bottom: 12px; }
-    #shop { padding-top: 12px; }
-    #shop .section-title { padding-top: 0; }
-    #shop .shop-subheader { padding-bottom: 20px; }
-  }
-  
+   
+   /* Underline the product link when hovering image */
+   .image-container:hover ~ ul li.underline a { text-decoration: underline; }
+   
+   .product-title a { text-decoration: none; }
+   .product-title a:hover { text-decoration: underline; }
+   
+   /* Price text (plain, no glow) */
+   /* .price { margin-top: 4px; font-weight: 600; filter: none; text-shadow: none; } */
+   
+   /* =======================
+      Utility Links (Tops / Bottoms / Size Guide)
+      ======================= */
+   .links-row {
+     display: flex; gap: 16px; justify-content: center; align-items: center;
+     flex-wrap: wrap; margin: 16px 0 28px;
+   }
+   .pill { padding: 10px 16px; border: 1px solid #555; border-radius: 999px; font-size: .9rem; }
+   .pill:hover { border-color: #6e6e6e; text-decoration: underline; }
+   
+   /* =======================
+      Contact Section
+      ======================= */
+   #contact-section { padding-top: 150px; max-width: 400px; margin: 0 auto; text-align: center; }
+   #contact-section h2 { font-size: 1.5rem; margin-bottom: 20px; }
+   #contact-section form { display: flex; flex-direction: column; gap: 15px; }
+   
+   /* Inputs/Textareas/Buttons */
+   #contact-section input,
+   #contact-section textarea {
+     padding: 12px;
+     font-size: 0.65rem;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     width: 100%;
+     box-sizing: border-box;
+     font-family: 'Source Code Pro', monospace;
+   
+     background: transparent;   
+     color: #fff;             
+     caret-color: #fff;
+   }
+   #contact-section input::placeholder,
+   #contact-section textarea::placeholder { color: #fff; }
+   
+   #contact-section input:focus,
+   #contact-section textarea:focus {
+     outline: none;
+     /* border-color: #888; */
+     box-shadow: 0 0 0 2px rgba(255,255,255,.25);
+   }
+
+   #contact-section button {
+     padding: 12px;
+     font-size: 1rem;
+     border: 2px solid #ccc;
+     background: transparent;
+     color: #fff;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color .3s, border-color .3s;
+   }
+   #contact-section button:hover { background: gray; border-color: #ddd; }
+   
+   /* =======================
+      Socials & Footer
+      ======================= */
+   .socials { display: flex; gap: 10px; justify-content: center; align-items: center; margin: 24px auto; }
+   .socials img { width: 78px; height: 78px; }
+   
+   .site-footer { background: #333; opacity: .5; padding: 1rem 0; text-align: center; }
+   .site-footer p { margin: 0; font-size: 1rem; letter-spacing: 1.1px; }
+   
+   /* =======================
+      Responsive
+      ======================= */
+   @media (max-width: 900px) {
+     .projects-grid { grid-template-columns: repeat(2, 1fr); padding: 0 10px; }
+   }
+   
+   @media (max-width: 768px) {
+     .navbar { display: none; }
+   
+     .banner {
+       padding: 60px 20px 12px;
+       margin-top: 0;
+       width: 100%;
+       border-radius: 0;
+       height: auto;
+       margin-bottom: 0;
+     }
+   
+     #name { font-size: 1.2rem; }
+   
+     .container { flex-direction: column; align-items: center; gap: 20px; }
+     .content h2 { font-size: 2rem; }
+     p, li, ul { font-size: 0.55rem; }
+   
+     .section-title { font-size: 1.5rem; padding-top: 25px; }
+     .shop-subheader { text-align: center; font-size: 0.4rem; padding-bottom: 25px; }
+   
+     .projects-grid { grid-template-columns: repeat(2, 1fr); margin: 20px auto; padding: 0 10px; }
+     .project-card { max-width: 100%; }
+     .project-card li { padding-top: 25px; }
+   
+     .stock-status {
+       padding: 4px 10px;
+       color: #fff;
+       font-size: 0.25rem;
+       background: rgba(0,0,0,.5);
+       border-radius: 50px;
+     }
+   
+     .project-card .image-container { height: 100px; }
+   
+     #spotify-widget iframe, #video-section iframe { height: 200px; }
+   
+     #contact-section { padding-top: 25px; max-width: 250px; }
+     #contact-section h2 { font-size: 1rem; }
+     #contact-section input, #contact-section textarea { font-size: .5rem; }
+     #contact-section button { font-size: .5rem; }
+   
+     .banner { padding-bottom: 12px; }
+     #shop { padding-top: 12px; }
+     #shop .section-title { padding-top: 0; }
+     #shop .shop-subheader { padding-bottom: 20px; }
+   
+     .site-footer p { font-size: 0.55rem; }
+   }
+   
