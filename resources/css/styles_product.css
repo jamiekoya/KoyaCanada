@@ -143,4 +143,109 @@ paypal-cart-button {
   @media (prefers-reduced-motion: reduce) {
     .item-image, .item-image-hover { transition: none; }
   }
-  
+
+  /* ==========================
+   MOBILE FIXES FOR PRODUCT PAGE
+   ========================== */
+@media (max-width: 768px) {
+
+  .product-page {
+    padding: 20px 10px !important;
+  }
+
+  .product-toolbar-row {
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: center !important;
+  }
+
+  .item-container {
+    padding: 16px !important;
+    max-width: 95% !important;
+    border-radius: 8px !important;
+  }
+
+  .item-image-container {
+    max-width: 100% !important;
+    margin-bottom: 14px !important;
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  .item-description {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 12px !important;
+    padding: 0 4px !important;
+  }
+
+  .project-card .price {
+    font-size: 1rem !important; 
+    margin-bottom: 10px !important;
+  }
+
+  .buy-row,
+  .currency-row {
+    gap: 8px !important;
+    flex-wrap: wrap;
+    margin: 8px 0 !important;
+  }
+
+  .currency-row label {
+    font-size: 0.7rem !important;
+  }
+
+  .currency-select {
+    padding: 6px 8px !important;
+    font-size: 0.7rem !important;
+    border-radius: 6px !important;
+  }
+
+  paypal-add-to-cart-button,
+  paypal-cart-button {
+    min-width: 100px !important;
+    width: 100% !important;
+    max-width: 280px !important;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .item-description {
+    font-size: 0.75rem !important;
+  }
+
+  .project-card .price {
+    font-size: 0.9rem !important;
+  }
+
+  .currency-select {
+    font-size: 0.65rem !important;
+    padding: 5px 6px !important;
+  }
+
+  paypal-add-to-cart-button,
+  paypal-cart-button {
+    min-width: 90px !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .item-description {
+    display: -webkit-box !important;
+    /* -webkit-line-clamp: 2;            */
+    -webkit-box-orient: vertical;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    white-space: normal;
+    font-size: 0.8rem !important;    
+    line-height: 1.4 !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .item-description {
+    font-size: 0.75rem !important;   
+  }
+}  
