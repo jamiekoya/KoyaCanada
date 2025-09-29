@@ -63,8 +63,9 @@
         text-align: center;
     
         min-height: 35svh;            /* svh = stable viewport height on mobile */
-        padding: 24px 20px;           /* small, even padding */
-        margin: 0;                    
+        padding: 24px 20px;        
+        margin: 0;      
+        margin-top: 61px;              
     
         color: #fff;
         width: 100%;
