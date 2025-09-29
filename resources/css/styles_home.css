@@ -55,22 +55,40 @@
    /* =======================
       Banner
       ======================= */
-   .banner {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     position: relative;
-     padding: 120px 20px 20px; /* tightened bottom space */
-     text-align: center;
-     color: #fff;
-     margin: 60px 0 0 0;
-     background: transparent url('https://koyacanadawebsite.blob.core.windows.net/websiteimages/chappell knight Shattered light 6.png') center/cover no-repeat;
-     z-index: 1;
-     width: 100%;
-     border-radius: 10px;
-   }
-   #name { font-size: 4.75rem; letter-spacing: 7px; }
-   
+    .banner {
+        display: flex;
+        align-items: center;          
+        justify-content: center;     
+        flex-direction: column;
+        text-align: center;
+    
+        min-height: 35svh;            /* svh = stable viewport height on mobile */
+        padding: 24px 20px;           /* small, even padding */
+        margin: 0;                    
+    
+        color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        position: relative;
+        background: transparent
+        url('https://koyacanadawebsite.blob.core.windows.net/websiteimages/chappell knight Shattered light 6.png')
+        center/cover no-repeat;
+        z-index: 1;
+    }
+    
+    #name {
+        font-size: clamp(2rem, 6vw, 4.75rem);
+        letter-spacing: 7px;
+    }
+    
+    @media (max-width: 768px) {
+        .banner {
+        min-height: 55svh;          
+        border-radius: 0;
+        padding: 20px;
+        }
+    }
+  
    /* =======================
       Sections
       ======================= */
@@ -94,7 +112,7 @@
   }
    
    /* Tighten just the Shop area spacing */
-   #shop { padding-top: 20px; }
+   #shop { padding-top: 100px; }
    #shop .section-title { padding-top: 0; margin-top: 0; }
    #shop .shop-subheader { margin-top: 8px; padding-bottom: 40px; }
    
