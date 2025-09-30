@@ -1,23 +1,28 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.2" />
-  <title>Atlantis Oversized T-shirt Black</title>
-  <link rel="stylesheet" href="../../css/styles_body.css" />
-  
-  <!-- PayPal script -->
-  <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="9UP8YVT58Q3Z2"></script>
-<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/styles_body.css">
+    <title>Sabrina Carpenter Short And Sweet - Oversized T-shirt</title>
 </head>
-
-  <div class="product-container">
-
-    <!-- Cart Button -->
+    <style>
+    body {
+      zoom: 1.35;
+    }
+  </style>
+<script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="9UP8YVT58Q3Z2"></script>
+<body>
     <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
-
-    <!-- Add to Cart Button -->
-    <paypal-add-to-cart-button data-id="38UTZJM7DGHMC"></paypal-add-to-cart-button>
-
+    <script>
+        cartPaypal.Cart({ id: "pp-view-cart" })
+    </script>
+<paypal-add-to-cart-button data-id="38UTZJM7DGHMC"></paypal-add-to-cart-button>
+<script>
+  cartPaypal.AddToCart({ id: "38UTZJM7DGHMC" })
+<script>
+  cartPaypal.AddToCart({ id: "3BFDYKXS7S76S" })
+</script>
     <!-- Currency Selector -->
     <div class="currency-selector">
       <label for="currency-select">View prices in:</label>
@@ -29,57 +34,45 @@
         <option value="NZD">NZD</option>
       </select>
     </div>
-
-    <!-- Product Price -->
+    <!-- Product Price (for currency conversion) -->
     <div class="project-card">
-      <span class="price" data-cad-price="50">$50.00 CAD</span>
+        <span class="price" data-cad-price="50">$50.00 CAD</span>
     </div>
-
-  </div>
-
-  <!-- PayPal Button Scripts -->
-  <script>
-    cartPaypal.Cart({ id: "pp-view-cart" });
-    cartPaypal.AddToCart({ id: "38UTZJM7DGHMC" });
-  </script>
-
-  <!-- Currency Conversion Script -->
-  <script>
+    <script>
     const rates = {
-      CAD: 1,
-      USD: 0.73,
-      EUR: 0.67,
-      GBP: 0.57,
-      NZD: 1.20
+        CAD: 1,
+        USD: 0.73,
+        EUR: 0.67,
+        GBP: 0.57,
+        NZD: 1.20
     };
-
     const currencySymbols = {
-      CAD: '$',
-      USD: '$',
-      EUR: '€',
-      GBP: '£',
-      NZD: '$'
+        CAD: '$',
+        USD: '$',
+        EUR: '€',
+        GBP: '£',
+        NZD: '$'
     };
-
     function updatePrices() {
-      const currency = document.getElementById('currency-select').value;
-      document.querySelectorAll('.project-card .price').forEach(priceEl => {
-        const cad = parseFloat(priceEl.dataset.cadPrice);
-        if (!isNaN(cad)) {
-          const converted = (cad * (rates[currency] || 1)).toFixed(2);
-          priceEl.textContent = `${currencySymbols[currency] || ''}${converted} ${currency}`;
-        }
-      });
+        const currency = document.getElementById('currency-select').value;
+        document.querySelectorAll('.project-card').forEach(card => {
+          const priceEl = card.querySelector('.price');
+          if (!priceEl) return;
+          // Store original CAD price in a data attribute if not already set
+          if (!priceEl.dataset.cadPrice) {
+            const cadPrice = parseFloat(priceEl.textContent.replace(/[^0-9.]/g, ''));
+            if (!isNaN(cadPrice)) {
+                priceEl.dataset.cadPrice = cadPrice;
+            }
+          }
+          const cadPrice = parseFloat(priceEl.dataset.cadPrice);
+          if (isNaN(cadPrice)) return;
+          const converted = (cadPrice * rates[currency]).toFixed(2);
+          priceEl.textContent = `${currencySymbols[currency]}${converted} ${currency}`;
+        });
     }
-
     document.getElementById('currency-select').addEventListener('change', updatePrices);
-    updatePrices(); // Initial run
-  </script>
-
-</body>
-    <style>
-    body {
-      zoom: 1.35;
-    }
-  </style>
+    // Initial update
+    updatePrices();
+    </script>
 </html>
