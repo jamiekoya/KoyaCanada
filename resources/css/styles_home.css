@@ -1,20 +1,16 @@
 /* =======================
-   Tokens / Reset / Base
+   Global Reset & Type
    ======================= */
-:root {
-  --card-bg: rgba(255,255,255,.06);
-  --card-border: rgba(255,255,255,.16);
-  --card-shadow: 0 10px 30px rgba(0,0,0,.25);
-  --focus: rgba(255,255,255,.35);
-}
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 html, body { height: 100%; }
+
 body {
   font-family: 'Source Code Pro', monospace;
   color: #fff;
   overflow-x: hidden;
 }
+
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
@@ -24,12 +20,15 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
   margin: 0;
 }
+
 p, li, ul {
   text-transform: uppercase;
   font-size: 0.85rem;
   line-height: 1.6;
 }
+
 ul { list-style: none; }
+
 button { letter-spacing: 1px; box-sizing: border-box; }
 
 /* =======================
@@ -61,23 +60,37 @@ button { letter-spacing: 1px; box-sizing: border-box; }
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  min-height: 35svh;
+
+  min-height: 35svh; /* svh = stable viewport height on mobile */
   padding: 24px 20px;
   margin: 0;
   margin-top: 61px;
+
   color: #fff;
   width: 100%;
   border-radius: 10px;
   position: relative;
-  background:
-    transparent url('https://koyacanadawebsite.blob.core.windows.net/websiteimages/chappell knight Shattered light 6.png')
+  background: transparent
+    url('https://koyacanadawebsite.blob.core.windows.net/websiteimages/chappell knight Shattered light 6.png')
     center/cover no-repeat;
   z-index: 1;
 }
-#name { font-size: clamp(2rem, 6vw, 4.75rem); letter-spacing: 7px; }
+
+#title-name {
+  font-size: clamp(2rem, 6vw, 4.75rem);
+  letter-spacing: 7px;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    min-height: 55svh;
+    border-radius: 0;
+    padding: 20px;
+  }
+}
 
 /* =======================
-   Sections / Copy
+   Sections
    ======================= */
 section { padding: 60px 20px; }
 .section-title {
@@ -99,26 +112,20 @@ section { padding: 60px 20px; }
 }
 
 /* Tighten just the Shop area spacing */
-#shop { padding-top: 100px; padding-bottom: 100px; }
+#shop { padding-top: 100px; }
 #shop .section-title { padding-top: 0; margin-top: 0; }
 #shop .shop-subheader { margin-top: 8px; padding-bottom: 40px; }
 
 /* =======================
-   Containers / Content
+   Containers & Content
    ======================= */
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex; flex-wrap: wrap;
+  justify-content: center; align-items: flex-start;
+  gap: 40px; max-width: 1200px; margin: 0 auto;
 }
 .container img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
+  width: 100%; max-width: 400px; border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,.3);
 }
 .content { flex: 1; max-width: 600px; }
@@ -126,11 +133,12 @@ section { padding: 60px 20px; }
 .content p { margin-bottom: 0; }
 
 /* =======================
-   Shop Toolbar (Cart / Search / Currency)
+   Shop: Toolbar (Cart + Search + Currency)
    ======================= */
 .shop-toolbar { display: grid; gap: 12px; justify-items: center; margin-bottom: 16px; }
-.toolbar-row   { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.toolbar-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
 
+/* Search input */
 .search-input {
   background: transparent;
   color: #fff;
@@ -140,30 +148,38 @@ section { padding: 60px 20px; }
   font: inherit;
 }
 .search-input::placeholder { color: #fff; }
-.search-input:hover { border-color: #6e6e6e; }
+.search-input:hover { border-color:  #6e6e6e; }
 .search-input:focus { outline: none; box-shadow: 0 0 0 2px rgba(255,255,255,.25); }
 
-/* Currency select styled like a button */
+/* Currency <select> (button visuals) */
 .select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+
   background-color: transparent;
   color: #fff;
   border: 1px solid #555;
   border-radius: 6px;
-  padding: 8px 32px 8px 12px;
+  padding: 8px 32px 8px 12px; /* room for arrow */
   font: inherit;
   cursor: pointer;
+
+  /* custom arrow */
   background-image:
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1l5 5 5-5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 12px;
 }
-.select:hover { border-color: #6e6e6e; }
+.select:hover { border-color:  #6e6e6e; }
 .select:focus { outline: none; box-shadow: 0 0 0 2px rgba(255,255,255,.25); }
-.select option { background-color: rgba(0,0,0,.7); color: #fff; }
+
+/* Make the dropdown panel itself dark/transparent */
+.select option {
+  background-color: rgba(0,0,0,.7);
+  color: #fff;
+}
 
 /* =======================
    Projects Grid / Product Cards
@@ -175,24 +191,17 @@ section { padding: 60px 20px; }
   row-gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 15px;
+  padding-bottom: 15px;
 }
 
 .underline { text-decoration: none; text-decoration-thickness: 3px; padding-top: 15px; }
 .underline:hover { text-decoration: underline; }
 
 .project-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: none;
-  border-radius: 10px;
-  padding: 20px;
-  width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
-  text-align: center;
+  display: flex; flex-direction: column; align-items: center;
+  background: none; border-radius: 10px; padding: 20px;
+  width: 100%; max-width: 400px; box-sizing: border-box; text-align: center;
 }
 
 .status-container { width: 100%; text-align: left; }
@@ -216,11 +225,8 @@ section { padding: 60px 20px; }
 .project-card li { margin-top: 0; }
 
 .project-card .image-container {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  margin-bottom: 15px;
+  width: 100%; position: relative; overflow: hidden;
+  border-radius: 10px; margin-bottom: 15px;
 }
 .project-card .image-container::before { content: ""; display: block; padding-top: 80.25%; }
 
@@ -263,28 +269,52 @@ section { padding: 60px 20px; }
 .pill:hover { border-color: #6e6e6e; text-decoration: underline; }
 
 /* =======================
+   Contact Section
+   ======================= */
+#contact-section { padding-top: 150px; max-width: 400px; margin: 0 auto; text-align: center; }
+#contact-section h2 { font-size: 1.5rem; margin-bottom: 20px; }
+#contact-section form { display: flex; flex-direction: column; gap: 15px; }
+
+/* Inputs/Textareas/Buttons */
+#contact-section input,
+#contact-section textarea {
+  padding: 16px;
+  font-size: 0.65rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Source Code Pro', monospace;
+
+  background: transparent;
+  color: #fff;
+  caret-color: #fff;
+}
+#contact-section input::placeholder,
+#contact-section textarea::placeholder { color: #fff; }
+
+#contact-section input:focus,
+#contact-section textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.25);
+}
+
+#contact-section button {
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  background: transparent;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color .3s, border-color .3s;
+}
+#contact-section button:hover { background: gray; border-color: #ddd; }
+
+/* =======================
    Socials & Footer
    ======================= */
-.socials {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  margin: 24px auto;
-  flex-wrap: wrap;
-}
-.socials a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border: 1px solid var(--card-border);
-  border-radius: 999px;
-  background: transparent;
-  text-decoration: none;
-  font-size: .9rem;
-}
-.socials a:hover { text-decoration: underline; }
+.socials { display: flex; gap: 10px; justify-content: center; align-items: center; margin: 24px auto; }
 .socials img { width: 78px; height: 78px; }
 .site-footer { background: #333; opacity: .5; padding: 1rem 0; text-align: center; }
 .site-footer p { margin: 0; font-size: 1rem; letter-spacing: 1.1px; }
@@ -292,15 +322,12 @@ section { padding: 60px 20px; }
 .site-footer a:hover { text-decoration: underline; }
 
 /* =======================
-   Responsive ≥ 900px → 2 cols grid
+   Responsive
    ======================= */
 @media (max-width: 900px) {
   .projects-grid { grid-template-columns: repeat(2, 1fr); padding: 0 10px; }
 }
 
-/* =======================
-   Responsive ≤ 768px (mobile)
-   ======================= */
 @media (max-width: 768px) {
   .navbar { display: none; }
 
@@ -311,8 +338,8 @@ section { padding: 60px 20px; }
     border-radius: 0;
     height: auto;
     margin-bottom: 0;
-    min-height: 55svh;
   }
+
   #name { font-size: 1.2rem; }
 
   .container { flex-direction: column; align-items: center; gap: 20px; }
@@ -320,29 +347,11 @@ section { padding: 60px 20px; }
   p, li, ul { font-size: 0.55rem; }
 
   .section-title { font-size: 1.5rem; padding-top: 25px; }
-  #shop { padding-top: 12px; }
-  #shop .section-title {
-    padding-top: 20px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-  }
-  .shop-subheader {
-    text-align: center;
-    font-size: 0.75rem;
-    line-height: 1.4;
-    max-width: 85%;
-    padding-bottom: 20px;
-    margin: 10px auto 25px;
-  }
+  .shop-subheader { text-align: center; font-size: 0.4rem; padding-bottom: 25px; }
 
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 20px auto;
-    padding: 0 10px;
-  }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); margin: 20px auto; padding: 0 10px; }
   .project-card { max-width: 100%; }
-  .project-card li { padding-top: 5px; }
+  .project-card li { padding-top: 25px; }
 
   .stock-status {
     padding: 4px 10px;
@@ -352,23 +361,36 @@ section { padding: 60px 20px; }
     border-radius: 50px;
   }
 
-  .project-card .image-container { height: 100px; margin-bottom: 10px; }
+  .project-card .image-container { height: 100px; }
 
-  .shop-toolbar, .toolbar-row { gap: 10px; }
-  .search-input, .select {
-    padding: 6px 10px;
-    font-size: 0.65rem;
-    min-width: 120px;
-  }
+  #spotify-widget iframe, #video-section iframe { height: 200px; }
 
-  .pill, .links-row a, .site-footer a {
-    padding: 0px 8px;
-    font-size: 0.55rem;
+  #contact-section { padding-top: 25px; max-width: 250px; }
+  #contact-section h2 { font-size: 1rem; }
+  #contact-section input, #contact-section textarea { font-size: .5rem; }
+  #contact-section button { font-size: .5rem; }
+
+  .banner { padding-bottom: 12px; }
+  #shop { padding-top: 12px; }
+  #shop .section-title { padding-top: 0; }
+  #shop .shop-subheader { padding-bottom: 20px; }
+
+  .site-footer p { font-size: 0.55rem; }
+}
+
+/* ─── Buttons / Pills / Footer links on mobile ─── */
+@media (max-width: 768px) {
+  .pill,
+  .links-row a,
+  .site-footer a {
+    padding: 4px 8px !important;
+    font-size: 0.55rem !important;
     border-radius: 999px;
   }
+
   .links-row {
-    gap: 6px;
-    margin: 6px 0 12px;
+    gap: 6px !important;
+    margin: 6px 0 12px !important;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -386,143 +408,77 @@ section { padding: 60px 20px; }
     margin-bottom: 6px;
   }
 
+  .search-input,
+  .select {
+    padding: 4px 6px !important;
+    font-size: 0.55rem !important;
+  }
+}
+
+/* ─── Refined toolbar + price spacing on mobile ─── */
+@media (max-width: 768px) {
+  .search-input,
+  .select {
+    padding: 6px 10px !important;
+    font-size: 0.65rem !important;
+    min-width: 120px;
+  }
+
+  .toolbar-row {
+    flex-wrap: wrap;
+    gap: 10px !important;
+    justify-content: center;
+  }
+
+  .project-card .price {
+    font-size: 0.65rem !important;
+    margin-top: 4px !important;
+    display: inline-block;
+  }
+
+  .project-card .product-title a {
+    margin-bottom: 2px;
+  }
+}
+
+/* ─── Shop title + subheader adjustments on mobile ─── */
+@media (max-width: 768px) {
+  #shop .section-title {
+    padding-top: 20px !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    font-size: 1.8rem !important;
+  }
+
+  #shop .shop-subheader {
+    font-size: 0.75rem !important;
+    line-height: 1.4;
+    max-width: 85%;
+    padding-bottom: 20px !important;
+    margin: 10px auto 25px !important;
+  }
+}
+
+/* ─── Tighten price positioning under image on mobile ─── */
+@media (max-width: 768px) {
+  .project-card .image-container {
+    margin-bottom: 15px !important;
+  }
+
+  .project-card .product-title a {
+    margin-bottom: 2px !important;
+  }
+
   .project-card .price {
     display: block;
-    font-size: 0.75rem;
-    line-height: 1.2;
-    margin-top: 4px;
-    margin-bottom: 6px;
+    font-size: 0.75rem !important;
+    margin-top: 4px !important;
+    margin-bottom: 6px !important;
+    line-height: 1.2 !important;
   }
 
-  .socials { gap: 8px; margin: 24px auto 60px; }
-  .socials a { padding: 6px 10px; font-size: .85rem; }
-  .socials img { width: 28px; height: 28px; }
-
-  .site-footer p { font-size: 0.55rem; }
-}
-
-/* === Center the shop toolbar (desktop & mobile) === */
-.shop-toolbar {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.shop-toolbar > .toolbar-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-paypal-cart-button,
-paypal-add-to-cart-button {
-  display: inline-block;
-}
-
-/* === Smaller footer/social link icons on desktop === */
-@media (min-width: 769px) {
-  .socials img {
-    width: 22px !important;
-    height: 22px !important;
-  }
-}
-
-/* =======================
-   Unified Contact Section
-   ======================= */
-#contact-section {
-  max-width: 480px;
-  width: calc(100% - 32px);
-  margin: 80px auto 0;  /* top 80px, NO bottom margin */
-  padding: 16px 20px;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  box-shadow: var(--card-shadow);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: #fff;
-  text-align: left;
-}
-
-#contact-section h2 {
-  text-transform: none;
-  letter-spacing: .5px;
-  margin-bottom: 8px;
-  font-size: clamp(1rem, 2.4vw, 1.3rem);
-}
-#contact-section p {
-  text-transform: none;
-  opacity: .9;
-  line-height: 1.6;
-  margin: 0 0 12px;
-  font-size: 0.85rem;
-}
-#contact-section form {
-  display: grid;
-  gap: 12px;
-  margin-top: 6px;
-}
-#contact-section label {
-  text-transform: none;
-  font-size: .9rem;
-  opacity: .95;
-}
-#contact-section input,
-#contact-section textarea {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid var(--card-border);
-  border-radius: 10px;
-  background: transparent;
-  color: #fff;
-  font: inherit;
-  outline: none;
-  transition: box-shadow .2s, border-color .2s;
-  font-size: 0.85rem;
-}
-#contact-section input::placeholder,
-#contact-section textarea::placeholder { color: rgba(255,255,255,.75); }
-#contact-section input:focus,
-#contact-section textarea:focus {
-  border-color: var(--focus);
-  box-shadow: 0 0 0 2px var(--focus);
-}
-#contact-section button {
-  margin-top: 6px;
-  padding: 8px 12px;
-  border: 1px solid var(--card-border);
-  border-radius: 10px;
-  background: rgba(255,255,255,.08);
-  color: #fff;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: transform .05s ease, background .2s, border-color .2s;
-}
-#contact-section button:hover {
-  background: rgba(255,255,255,.12);
-  border-color: rgba(255,255,255,.28);
-}
-#contact-section button:active { transform: translateY(1px); }
-
-/* Mobile tweaks */
-@media (max-width: 768px) {
-  #contact-section {
-    max-width: 360px;
-    width: calc(100% - 20px);
-    padding: 12px 14px;
-    margin: 32px auto 0; /* top only, no bottom margin */
-  }
-  #contact-section h2 { font-size: 1rem; }
-  #contact-section p  { font-size: 0.8rem; }
-  #contact-section input,
-  #contact-section textarea {
-    padding: 7px 9px;
-    font-size: 0.8rem;
-  }
-  #contact-section button {
-    padding: 7px 10px;
-    font-size: 0.8rem;
+  .project-card li {
+    padding-top: 5px !important;
   }
 }
 
@@ -532,32 +488,54 @@ paypal-add-to-cart-button {
     font-size: 0.65rem !important; 
     border: 1px solid #555 !important;
     border-radius: 999px !important;
+}
+
+  /* ─── Consistent description height + price position on mobile ─── */
+  @media (max-width: 768px) {
+    .project-card .product-description,
+    .project-card .product-title a {
+      display: -webkit-box !important;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+
+      font-size: 0.65rem !important;
+      line-height: 1.3 !important;
+      max-height: 2.6em !important;
+      min-height: 2.6em !important;
+      margin-bottom: 6px !important;
+    }
+
+    .project-card .image-container {
+      margin-bottom: 10px !important;
+    }
+
+    .project-card .price {
+      display: block;
+      font-size: 0.75rem !important;
+      line-height: 1.2 !important;
+      margin-top: 4px !important;
+      margin-bottom: 6px !important;
+    }
   }
 }
 
-/* =======================
-   Contact → Footer spacing (final authority)
-   ======================= */
-
-/* Space between Contact and Socials is created with padding (no collapsing). */
-#contact-section + .socials {
-  padding-top: 40px !important;   /* gap under contact */
-  margin-top: 0 !important;
+.socials img {
+  width: 64px;   
+  height: 64px;  
 }
 
-/* Consistent gap from Socials to Footer */
-.socials {
-  margin: 0 auto 80px !important; /* bottom gap before footer */
-}
-
-/* If a page has NO socials, space contact directly from footer */
-#contact-section + .site-footer {
-  margin-top: 120px !important; /* 40px (contact→footer gap) + 80px (footer buffer) */
-}
-
-/* Mobile spacing values */
 @media (max-width: 768px) {
-  #contact-section + .socials { padding-top: 30px !important; }
-  .socials { margin: 0 auto 60px !important; }
-  #contact-section + .site-footer { margin-top: 90px !important; }
+  .socials img {
+    width: 24px !important; 
+    height: 24px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #title-name {
+    font-size: 1.5rem !important; 
+    letter-spacing: 7px;        
+  }
 }
