@@ -1,37 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="./resources/css/styles_contact.css">
-    <link rel="stylesheet" href="./resources/css/styles_body.css">
+  <meta charset="UTF-8" />
+  <title>Contact Us — Koya Collection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="stylesheet" href="./resources/css/styles_contact.css">
+  <link rel="stylesheet" href="./resources/css/styles_body.css">
+  <link rel="stylesheet" href="./resources/css/styles_home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Source+Code+Pro&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --card-bg: rgba(255,255,255,.06);
+      --card-border: rgba(255,255,255,.16);
+      --card-shadow: 0 10px 30px rgba(0,0,0,.25);
+      --focus: rgba(255,255,255,.35);
+    }
+
+    body.main-content { min-height: 100svh; display: grid; place-items: center; padding: 40px 20px; }
+
+    .contact-shell { width: 100%; max-width: 760px; }
+
+    .contact-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .contact-header .home-button {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border: 1px solid var(--card-border); border-radius: 999px;
+      text-decoration: none; font-size: .9rem;
+    }
+    .contact-header .home-button:hover { text-decoration: underline; }
+
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      box-shadow: var(--card-shadow);
+      padding: 28px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      color: #fff;
+    }
+
+    .contact-card h1 {
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      letter-spacing: .5px;
+      margin: 0 0 8px;
+      text-transform: none;               
+    }
+
+    .contact-card p.lead {
+      margin: 0 0 16px;
+      opacity: .9;
+      text-transform: none;
+      line-height: 1.6;
+    }
+
+    .social-row {
+      display: flex; gap: 10px; align-items: center;
+      margin: 8px 0 18px;
+      flex-wrap: wrap;
+    }
+    .social-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 12px; border: 1px solid var(--card-border); border-radius: 999px;
+      text-decoration: none; font-size: .9rem;
+    }
+    .social-pill img { width: 20px; height: 20px; display: block; }
+    .social-handle { opacity: .85; font-size: .9rem; text-transform: none; }
+
+    .contact-form {
+      display: grid; gap: 12px;
+      margin-top: 6px;
+    }
+
+    .contact-form label {
+      font-size: .85rem; opacity: .95; text-transform: none;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      background: transparent;
+      color: #fff;
+      font: inherit;
+      outline: none;
+      transition: box-shadow .2s, border-color .2s;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,.75); }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--focus);
+      box-shadow: 0 0 0 2px var(--focus);
+    }
+
+    .submit-button {
+      margin-top: 6px;
+      padding: 12px 16px;
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform .05s ease, background .2s, border-color .2s;
+    }
+    .submit-button:hover { background: rgba(255,255,255,.12); border-color: rgba(255,255,255,.28); }
+    .submit-button:active { transform: translateY(1px); }
+
+    /* Small screens */
+    @media (max-width: 768px) {
+      body.main-content { padding: 24px 14px; }
+      .contact-card { padding: 20px; border-radius: 14px; }
+      .social-row { gap: 8px; }
+      .social-pill { padding: 6px 10px; font-size: .85rem; }
+      .contact-form input, .contact-form textarea { padding: 10px 12px; }
+      .submit-button { padding: 10px 14px; font-size: .95rem; }
+    }
+
+    .contact-form #name,
+    .contact-form #email {
+    height: 44px !important;       
+    padding: 10px 14px !important;  
+    line-height: 22px !important;
+    font-size: 1rem !important;
+    box-sizing: border-box;
+    }
+
+    .contact-form #name::placeholder,
+    .contact-form #email::placeholder {
+    font-size: 1rem !important;
+    line-height: 22px !important;
+    opacity: .85;
+    }
+
+  </style>
 </head>
+
 <body class="main-content">
-    <header>
-        <ul>
-            <li><a href="index.html" class="home-button">Home</a></li>
-        </ul>
-    </header>
-    <div class="centered-content">
-        <h1>Contact Us</h1>
-        <p>If you have any questions or concerns, feel free to reach out to us using the form below or through our social media channels. Thanks for your support!</p>
-        <a href="https://www.instagram.com/jamiekoya" target="_blank" class="button instagram-button">
-            <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/instagram-icone-icon.png" alt="Instagram" style="width: 24px; height: 24px;">
-        </a>
-        <p>Instagram: @jamiekoya</p>
-        <form action="mailto:jamesweis16@gmail.com" method="POST" enctype="text/plain" class="contact-form">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-                </div>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-                </div>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-            <button type="submit" class="button submit-button">Submit</button>
-        </form>
+  <div class="contact-shell">
+    <div class="contact-header">
+      <a href="index.html" class="home-button" aria-label="Back to Home">← Home</a>
     </div>
+
+    <section class="contact-card" aria-labelledby="contact-title">
+      <h1 id="contact-title">Contact Us</h1>
+      <p class="lead">
+        If you have any questions or concerns, feel free to reach out to us using the form below or through our social media channels. Thanks for your support!
+      </p>
+
+      <form class="contact-form" action="https://formsubmit.co/jamiekoya00@gmail.com" method="POST">
+        <!-- FormSubmit options (optional but nice) -->
+        <input type="hidden" name="_subject" value="New message from Koya Collection contact page">
+        <input type="hidden" name="_captcha" value="false">
+        <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html"> -->
+        <!-- Honeypot spam trap -->
+        <input type="text" name="_honey" style="display:none">
+
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" inputmode="email" autocomplete="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+
+        <button type="submit" class="submit-button">Send Message</button>
+      </form>
+    </section>
+  </div>
+
+    <!-- Socials -->
+  <nav class="socials" aria-label="Social media">
+    <a href="https://www.instagram.com/jamiekoya" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/instagram-icone-icon.png" alt="Instagram" />
+    </a>
+    <a href="https://www.tiktok.com/@jamiekoya" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+      <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/logo-tiktok-icone-1536.png" alt="TikTok" />
+    </a>
+    <a href="https://www.youtube.com/@JamieKoya" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/youtube logo button.png" alt="YouTube" />
+    </a>
+    <a href="https://linktr.ee/Jamiekoya?utm_source=linktree_admin_share" target="_blank" rel="noopener noreferrer" aria-label="Linktree">
+      <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/all my links icon 2.png" alt="Linktree" />
+    </a>
+  </nav>
+  
 </body>
 </html>

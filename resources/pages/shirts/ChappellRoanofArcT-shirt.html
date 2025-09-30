@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chappell Roan of Arc T-shirt</title>
+
+  <link rel="stylesheet" href="../../css/styles_body.css">
+  <link rel="stylesheet" href="../../css/styles_home.css">
+  <link rel="stylesheet" href="../../css/styles_product.css">
+</head>
+<body>
+  <!-- PayPal cart script -->
+  <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="9UP8YVT58Q3Z2"></script>
+
+  <div class="product-page">
+
+    <div class="item-container">
+      <div class="item-image-container">
+        <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanShirtTransparentFront.png"
+             alt="Chappell Roan of Arc T-shirt Front" class="item-image">
+        <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanShirtTransparentBack.png"
+             alt="Chappell Roan of Arc T-shirt Back" class="item-image-hover">
+      </div>
+      <!-- <h1 class="item-title">Chappell Roan of Arc — Oversized T-shirt</h1> -->
+
+      <p class="item-description">
+        Show your love for Chappell Roan with this stylish and comfortable oversized T-shirt.
+        Perfect for fans and music lovers alike; the vintage acid wash aesthetic is sure to make
+        your crush want to be more than just casual!
+      </p>
+
+      <div class="buy-row">
+        <paypal-add-to-cart-button data-id="44SLCL7547WKE"></paypal-add-to-cart-button>
+      </div>
+      <script> cartPaypal.AddToCart({ id: "44SLCL7547WKE" }) </script>
+
+      <!-- Currency Selector -->
+      <div class="currency-row">
+        <label for="currency-select">View prices in:</label>
+        <select id="currency-select" class="currency-select">
+          <option value="CAD" selected>CAD</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="NZD">NZD</option>
+        </select>
+      </div>
+
+      <div class="product-toolbar-row">
+
+        <div class="project-card">
+            <span class="price" data-cad-price="50">$50.00 CAD</span>
+          </div>
+
+        <div class="product-toolbar">
+            <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+            <script> cartPaypal.Cart({ id: "pp-view-cart" }) </script>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Currency script (unchanged) -->
+  <script>
+    const rates = { CAD:1, USD:.73, EUR:.67, GBP:.57, NZD:1.20 };
+    const currencySymbols = { CAD:'$', USD:'$', EUR:'€', GBP:'£', NZD:'$' };
+
+    function updatePrices() {
+      const currency = document.getElementById('currency-select').value;
+      document.querySelectorAll('.project-card .price').forEach(priceEl => {
+        const cad = parseFloat(priceEl.dataset.cadPrice);
+        if (!isNaN(cad)) {
+          const converted = (cad * (rates[currency] || 1)).toFixed(2);
+          priceEl.textContent = `${currencySymbols[currency] || ''}${converted} ${currency}`;
+        }
+      });
+    }
+    document.getElementById('currency-select').addEventListener('change', updatePrices);
+    updatePrices();
+  </script>
+</body>
+</html>

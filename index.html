@@ -1,600 +1,491 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <!--Name that appears in your browser-->
-    <title>Koya Collection</title>
-    <!--This is a path to the image that appears as your website icon in the browser-->
-    <link rel="icon" href="https://koyacanadawebsite.blob.core.windows.net/websiteimages/JamesWebsiteIcon.png">
-    <link rel="stylesheet" href="./resources/css/styles_home.css">
-    <link rel="stylesheet" href="./resources/css/styles_body.css">
-    <!--This is a link to a font we import for use-->
-    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Source+Code+Pro&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- JavaScript to declare a URL variable -->
-    <script type="text/javascript">
-        // This link changes all store links
-        var paymentUrl = "https://www.paypal.com/ncp/payment/9M8DUNU277ANL";
-    </script>
+  <meta charset="UTF-8" />
+  <base href="/resources/">
+  <title>Koya Collection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Hand-painted apparel by Koya Collection. Shop tees, hoodies, and more." />
+  <link rel="icon" href="https://koyacanadawebsite.blob.core.windows.net/websiteimages/JamesWebsiteIcon.png" />
+  <link rel="stylesheet" href="css/styles_home.css">
+  <link rel="stylesheet" href="css/styles_body.css">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Source+Code+Pro&display=swap" rel="stylesheet" />
+
+  <!-- PayPal Cart -->
+  <script defer src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="9UP8YVT58Q3Z2"></script>
+
+  <script>
+    // Global payment URL (if needed elsewhere)
+    const paymentUrl = "https://www.paypal.com/ncp/payment/9M8DUNU277ANL";
+  </script>
 </head>
-<script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="9UP8YVT58Q3Z2"></script>
+
 <body>
-    <!-- Header and Navigation -->
-    <header>
-        <nav class="navbar">
-            <ul>
-                <!-- <li><a href="#about-me-section">About Me</a></li> -->
-                <li><a href="#shop">Shop</a></li>
-                <li><a href="#contact-section">Contact Me</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Main Content -->
-    <main>
-        <!-- Banner Section -->
-        <section class="banner">
-            <h1 id="name">Koya Collection</h1>
-        </section>
-        <!-- <a href="index.html">Home/</a> -->
-        <a href="confirmation_page.html"> </a>
-        <!-- <a href="Contact%20page.html">Contact Page/</a> -->
-        <a href="Chappell%20Roan%20of%20Arc%20T-shirt.html"></a>
+  <a class="visually-hidden" href="#shop">Skip to Shop</a>
 
-        <section>
-                <!-- Instagram Link -->
-            <!-- <div style="text-align: center; margin-top: 20px;">
-                <a href="https://www.instagram.com/jamiekoya" target="_blank" rel="noopener noreferrer">
-                    <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/instagram-icone-icon.png" alt="Instagram" style="width: 40px; height: 40px;">
-                </a> -->
+  <!-- Header -->
+  <header>
+    <nav class="navbar" aria-label="Primary">
+      <ul>
+        <li><a href="/#shop">Shop</a></li>
+        <li><a href="/#contact-section">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <!-- Linktree Link -->
-                <!-- <a href="https://linktr.ee/Jamiekoya?utm_source=linktree_admin_share" target="_blank" rel="noopener noreferrer">
-                    <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/all my links icon 2.png" alt="Linktree" style="width: 40px; height: 40px;">
-                </a> -->
-            </div>
-        </section>
+  <main>
+    <!-- Banner -->
+    <section class="banner" aria-label="Koya Collection banner">
+      <h1 id="title-name">Koya Collection</h1>
+    </section>
 
-        <!-- Shop Section -->
-        <section id="shop">
-            <h2 class="section-title">Shop</h2>
-            <p class="shop-subheader" style="font-size: 12px;">All designs created and hand painted by me @jamiekoya. Please allow 2-4 weeks for shipping. Shipping cost added during checkout. </p>
-            <!-- <p style="text-align: center; font-size: 8px; margin-bottom: 10px;"> (Please refer to size guide at bottom of page to ensure proper sizing) -->
-            </p>
-            <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
-            <!-- <div style="text-align: center; margin-bottom: 20px;">
-                <input type="text" id="product-search" placeholder="Search products..." style="padding: 8px; width: 250px; font-size: 16px;">
-            </div> -->
-            <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const searchInput = document.getElementById("product-search");
-                const cards = document.querySelectorAll(".projects-grid .project-card");
+    <!-- Shop -->
+    <section id="shop" aria-labelledby="shop-title">
+      <h2 id="shop-title" class="section-title">Shop</h2>
+      <p class="shop-subheader">
+        All designs created and hand painted by me @jamiekoya. Please allow 2–4 weeks for shipping. Shipping cost added during checkout.
+      </p>
 
-                searchInput.addEventListener("input", function() {
-                    const query = searchInput.value.toLowerCase();
-                    cards.forEach(card => {
-                        const text = card.textContent.toLowerCase();
-                        card.style.display = text.includes(query) ? "" : "none";
-                    });
-                });
-            });
-            </script>
+      <!-- Toolbar: cart + search + currency -->
+      <div class="shop-toolbar" role="group" aria-label="Shop tools">
+        <div class="toolbar-row">
+          <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+          <label>
+            <span class="visually-hidden">Search products</span>
+            <input id="product-search" class="search-input" type="search" placeholder="Search products…" autocomplete="off" />
+          </label>
+          <label for="currency-select">View prices in:</label>
+          <select id="currency-select" class="select" aria-label="Currency">
+            <option value="CAD" selected>CAD</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="NZD">NZD</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Category links + size guide -->
+      <div class="links-row" aria-label="Categories and Size Guide">
+        <a class="pill" href="pages/Tops.html">Tops</a>
+        <a class="pill" href="pages/Bottoms.html">Bottoms</a>
+        <a class="pill" href="pages/SweatshirtsAndHoodies.html">Sweatshirts &amp; Hoodies</a>
+        <a class="pill" href="pages/misc/SizeGuide.html" target="_blank" rel="noopener noreferrer">Size Guide</a>
+      </div>
+
+      <!-- Products -->
+      <div class="projects-grid">
+        <!-- 1. Chappell Roan Tee -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/shirts/ChappellRoanofArcT-shirt.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanShirtTransparentFront.png" alt="Chappell Roan of Arc Oversized T-shirt, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanShirtTransparentBack.png"  alt="Chappell Roan of Arc Oversized T-shirt, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/shirts/ChappellRoanofArcT-shirt.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/shirts/ChappellRoanofArcT-shirt.html">Chappell Roan of Arc — Oversized T-shirt</a></li>
+            <li class="price" data-cad-price="50">$50 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 2. Sabrina Carpenter Tee -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/shirts/SabrinaCarpenterOversizedT-Shirt.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Sabrina T-Shirt Front Pink.png" alt="Sabrina Carpenter Short N Sweet Oversized T-shirt, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Sabrina T-Shirt  Back.png" alt="Sabrina Carpenter Short N Sweet Oversized T-shirt, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/shirts/SabrinaCarpenterOversizedT-Shirt.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/shirts/SabrinaCarpenterOversizedT-Shirt.html">Sabrina Carpenter Short N Sweet — Oversized T-shirt</a></li>
+            <li class="price" data-cad-price="50">$50 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 3. SZA CTRL Tee -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/shirts/CTRLSZAOversizedT-shirt.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/CTRL T-Shirt Front.png" alt="SZA CTRL Oversized T-shirt, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/CTRL T-Shirt Back.png" alt="SZA CTRL Oversized T-shirt, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/shirts/CTRLSZAOversizedT-shirt.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/shirts/CTRLSZAOversizedT-shirt.html">SZA CTRL — Oversized T-shirt</a></li>
+            <li class="price" data-cad-price="50">$50 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 4. Doja Cat Mooo! Tee -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/shirts/DojaCatMooo!OversizedT-shirt.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/doja cat mooo! - t-shirt.png" alt='Doja Cat "Mooo!" Oversized T-shirt, front' />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/doja cat mooo! - t-shirt back.png" alt='Doja Cat "Mooo!" Oversized T-shirt, back' />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/shirts/DojaCatMooo!OversizedT-shirt.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/shirts/DojaCatMooo!OversizedT-shirt.html">Doja Cat "Mooo!" — Oversized T-shirt</a></li>
+            <li class="price" data-cad-price="50">$50 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 5. Grimes Tee -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/shirts/GrimesOversizedT-shirt.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Grimes T-shirt front.png" alt="Grimes Genesis Oversized T-shirt, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Grimes T-shirt Back.png" alt="Grimes Genesis Oversized T-shirt, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/shirts/GrimesOversizedT-shirt.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/shirts/GrimesOversizedT-shirt.html">Grimes Genesis — Oversized T-shirt</a></li>
+            <li class="price" data-cad-price="50">$50 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 6. Elvira Tee -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/shirts/ElviraT-shirt.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Elvira T-shirt Front.png" alt="Elvira Oversized T-shirt, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Elvira T-shirt Back.png" alt="Elvira Oversized T-shirt, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/shirts/ElviraT-shirt.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/shirts/ElviraT-shirt.html">Elvira — Oversized T-shirt</a></li>
+            <li class="price" data-cad-price="50">$50 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 7. Atlantis Tee -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/shirts/AtlantisT-ShirtBlack.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Atlantis shirt Front.png" alt="Princess of Atlantis (Kida) Oversized T-shirt, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Atlantis shirt Back.png" alt="Princess of Atlantis (Kida) Oversized T-shirt, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/shirts/AtlantisT-ShirtBlack.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/shirts/AtlantisT-ShirtBlack.html">Princess of Atlantis (Kida) — Oversized T-shirt</a></li>
+            <li class="price" data-cad-price="50">$50 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 8. Carrie Tee -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/shirts/CarrieT-shirt.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Carrie T-shirt Front.png" alt="Prom Queen (Carrie) Oversized T-shirt, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Carrie T-shirt Back.png" alt="Prom Queen (Carrie) Oversized T-shirt, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/shirts/CarrieT-shirt.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/shirts/CarrieT-shirt.html">Prom Queen (Carrie) — Oversized T-shirt</a></li>
+            <li class="price" data-cad-price="50">$50 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 9. Island Goddess Tee -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/shirts/IslandGoddessT-shirt.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/IslandGoddessTransparentFront.png" alt="Island Goddess “Fiji Time” Oversized T-shirt, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/IslandGoddessTransparentBack.png"  alt="Island Goddess “Fiji Time” Oversized T-shirt, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/shirts/IslandGoddessT-shirt.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/shirts/IslandGoddessT-shirt.html">Island Goddess “Fiji Time” — Oversized T-shirt</a></li>
+            <li class="price" data-cad-price="50">$50 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 10. Center of the Universe Tee -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/shirts/CenterOfTheUniverseOversizedT-shirt.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/CenterOfTheUniverseFront.png" alt="Center of the Universe Oversized T-shirt, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/CenterOfTheUniverseBack.png" alt="Center of the Universe Oversized T-shirt, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/shirts/CenterOfTheUniverseOversizedT-shirt.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/shirts/CenterOfTheUniverseOversizedT-shirt.html">Center of the Universe — Oversized T-shirt</a></li>
+            <li class="price" data-cad-price="50">$50 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 11. Doja Cat Crop Top -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/shirts/DojaCatMooo!CropTop.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Doja shirt front.png" alt='Doja Cat "Mooo!" Crop Top, front' />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Doja shirt back.png"  alt='Doja Cat "Mooo!" Crop Top, back' />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/shirts/DojaCatMooo!CropTop.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/shirts/DojaCatMooo!CropTop.html">Doja Cat "Mooo!" — Crop Top</a></li>
+            <li class="price" data-cad-price="50">$50 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 12. Hibiscus Shorts -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/shorts/HibiscusShorts.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/hibiscus shorts front.png" alt="Hibiscus Shorts, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/hibiscus shorts back.png"  alt="Hibiscus Shorts, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/shorts/HibiscusShorts.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/shorts/HibiscusShorts.html">Hibiscus Shorts</a></li>
+            <li class="price" data-cad-price="40">$40 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 13. Starlight Shorts -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/shorts/StarlightShorts.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/SpaceShortsTransparentFront.png" alt="Starlight Shorts, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/SpaceShortsTransparentBack.png"  alt="Starlight Shorts, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/shorts/StarlightShorts.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/shorts/StarlightShorts.html">Starlight Shorts</a></li>
+            <li class="price" data-cad-price="40">$40 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 14. Elvira Hoodie -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/hoodies/ElviraHoodie.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Elvira Hoodie Front.png" alt="Elvira Boxy Hoodie, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Elvira Hoodie Back.png"  alt="Elvira Boxy Hoodie, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/hoodies/ElviraHoodie.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/hoodies/ElviraHoodie.html">Elvira — Boxy Hoodie</a></li>
+            <li class="price" data-cad-price="80">$80 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 15. Grimes Collar Sweatshirt -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/sweatshirts/GrimesCollarSweatshirt.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Grimes Genesis - Collar Sweatshirt Front.png" alt="Grimes Genesis Collar Sweatshirt, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Grimes Genesis - Collar Sweatshirt Back.png"  alt="Grimes Genesis Collar Sweatshirt, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/sweatshirts/GrimesCollarSweatshirt.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/sweatshirts/GrimesCollarSweatshirt.html">Grimes Genesis — Collar Sweatshirt</a></li>
+            <li class="price" data-cad-price="70">$70 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 16. Sabrina Hoodie -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/hoodies/SabrinaCarpenterHoodie.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Sabrina Hoodie Front Pink.png" alt="Sabrina Carpenter Short N Sweet Hoodie, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Sabrina Hoodie'  Back.png"  alt="Sabrina Carpenter Short N Sweet Hoodie, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/hoodies/SabrinaCarpenterHoodie.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/hoodies/SabrinaCarpenterHoodie.html">Sabrina Carpenter Short N Sweet — Hoodie</a></li>
+            <li class="price" data-cad-price="80">$80 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 17. Atlantis Hoodie -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/hoodies/AtlantisHoodie.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Atlantis Hoodie Front.png" alt="Princess of Atlantis (Kida) Hoodie, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Atlantis Hoodie Back.png"  alt="Princess of Atlantis (Kida) Hoodie, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/hoodies/AtlantisHoodie.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/hoodies/AtlantisHoodie.html">Princess of Atlantis (Kida) — Hoodie</a></li>
+            <li class="price" data-cad-price="80">$80 CAD</li>
+          </ul>
+        </article>
+      
+        <!-- 18. Chappell Roan Sweatshirt -->
+        <article class="project-card">
+          <div class="image-container">
+            <a href="pages/sweatshirts/ChappellRoanofArcSweatshirt.html">
+              <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanOfArcFront.png" alt="Chappell Roan of Arc Sweatshirt, front" />
+              <img class="back"  src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanOfArcBack.png"  alt="Chappell Roan of Arc Sweatshirt, back" />
+            </a>
+          </div>
+          <div class="status-container">
+            <a href="pages/sweatshirts/ChappellRoanofArcSweatshirt.html" class="stock-status in-stock">In stock</a>
+          </div>
+          <ul>
+            <li class="product-title"><a href="pages/sweatshirts/ChappellRoanofArcSweatshirt.html">Chappell Roan of Arc — Sweatshirt</a></li>
+            <li class="price" data-cad-price="65">$65 CAD</li>
+          </ul>
+        </article>
+      </div>
+
+    <!-- Contact -->
+    <section id="contact-section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact Me</h2>
+      <form action="https://formsubmit.co/jamiekoya00@gmail.com" method="POST">
+        <label class="visually-hidden" for="name">Your Name</label>
+        <input class="input" id="name" name="name" type="text" placeholder="Your Name" required />
+
+        <label class="visually-hidden" for="email">Your Email</label>
+        <input class="input" id="email" name="email" type="email" placeholder="Your Email" required />
+
+        <label class="visually-hidden" for="message">Your Message</label>
+        <textarea class="textarea" id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+
+        <button class="button" type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Socials -->
+  <nav class="socials" aria-label="Social media">
+    <a href="https://www.instagram.com/jamiekoya" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/instagram-icone-icon.png" alt="Instagram" />
+    </a>
+    <a href="https://www.tiktok.com/@jamiekoya" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+      <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/logo-tiktok-icone-1536.png" alt="TikTok" />
+    </a>
+    <a href="https://www.youtube.com/@JamieKoya" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+      <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/youtube logo button.png" alt="YouTube" />
+    </a>
+    <a href="https://linktr.ee/Jamiekoya?utm_source=linktree_admin_share" target="_blank" rel="noopener noreferrer" aria-label="Linktree">
+      <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/all my links icon 2.png" alt="Linktree" />
+    </a>
+  </nav>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>© 2025 by Koya Collection</p>
+    <p><a id="terms" href="pages\misc\TermsOfService.html" target="_blank" rel="noopener noreferrer">Terms of Service</a></p>
+    <p><a id="refund-policy" href="pages\misc\RefundPolicy.html" target="_blank" rel="noopener noreferrer">Refund Policy</a></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize PayPal cart once cart script is ready
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.cartPaypal && typeof cartPaypal.Cart === 'function') {
+        cartPaypal.Cart({ id: "pp-view-cart" });
+      }
+    });
+
+    // Product search (safe if field missing)
+    (function initSearch(){
+      const searchInput = document.getElementById('product-search');
+      if (!searchInput) return;
+      const cards = Array.from(document.querySelectorAll('.projects-grid .project-card'));
+      searchInput.addEventListener('input', () => {
+        const q = searchInput.value.trim().toLowerCase();
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          card.style.display = text.includes(q) ? '' : 'none';
+        });
+      });
+    })();
+
+    // Currency selector
+    (function initCurrency(){
+      const rates = { CAD: 1, USD: 0.73, EUR: 0.67, GBP: 0.57, NZD: 1.20 };
+      const symbols = { CAD: '$', USD: '$', EUR: '€', GBP: '£', NZD: '$' };
+      const select = document.getElementById('currency-select');
+      if (!select) return;
+
+      function updatePrices() {
+        const currency = select.value;
+        document.querySelectorAll('.price').forEach(el => {
+          const cad = parseFloat(el.getAttribute('data-cad-price'));
+          if (Number.isFinite(cad)) {
+            const converted = (cad * (rates[currency] || 1)).toFixed(2);
+            el.textContent = `${symbols[currency] || ''}${converted} ${currency}`;
+          }
+        });
+      }
+
+      select.addEventListener('change', updatePrices);
+      updatePrices();
+    })();
+  </script>
+
 <script>
-  cartPaypal.Cart({ id: "pp-view-cart" })
+  document
+    .querySelectorAll('.projects-grid a[href]')
+    .forEach(a => {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    });
 </script>
-            <p style="text-align: center; font-size: 10px; margin-bottom: 10px;"> (Refer to size guide at bottom of page to ensure proper sizing)
-            <div style="text-align: center; font-size: small;">
-                <a href="Tops Page.html">Tops</a>
-            <div style="text-align: center; font-size: small;">
-                <a href="Bottoms%20Page.html">Bottoms</a>
-            <div style="text-align: center; font-size: small;">
-                <a href="Sweatshirts & Hoodies.html">Sweatshirts & Hoodies</a>
-            </div>
-            <script>
-                document.body.style.zoom = "120%";
-            </script>
-            <div class="projects-grid">
-                <!-- Product 1 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Chappell%20Roan%20of%20Arc%20T-shirt.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanShirtTransparentFront.png" alt="chappell-roan-shirt">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanShirtTransparentBack.png" alt="chappell-roan-shirt">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Chappell%20Roan%20of%20Arc%20T-shirt.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Chappell%20Roan%20of%20Arc%20T-shirt.html">Chappell Roan of Arc - Oversized T-shirt</a>
-                        </li>
-                        <li class="price">$50 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 2 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Sabrina Carpenter Oversized T-Shirt.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Sabrina T-Shirt Front Pink.png" alt="short-sweet-shirt">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Sabrina T-Shirt  Back.png" alt="short-sweet-shirt">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Sabrina Carpenter Oversized T-Shirt.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Sabrina Carpenter Oversized T-Shirt.html">Sabrina Carpenter Short N Sweet - Oversized T-shirt</a>
-                        </li>
-                        <li class="price">$50 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 3 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="CTRL SZA - Oversized T-shirt.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/CTRL T-Shirt Front.png" alt="ctrl-sza-shirt">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/CTRL T-Shirt Back.png" alt="ctrl-sza-shirt">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="CTRL SZA - Oversized T-shirt.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="CTRL SZA - Oversized T-shirt.html">SZA CTRL - Oversized T-shirt</a>
-                        </li>
-                        <li class="price">$50 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 3 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Doja cat Mooo! - Oversized T-shirt.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/doja cat mooo! - t-shirt.png" alt="doja-cat-mooo-shirt"> 
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/doja cat mooo! - t-shirt back.png" alt="doja-cat-mooo-shirt">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Doja cat Mooo! - Oversized T-shirt.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Doja cat Mooo! - Oversized T-shirt.html">Doja Cat "Mooo!" - Oversized T-shirt</a>
-                        </li>
-                        <li class="price">$50 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 4 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Grimes Oversized T-shirt.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Grimes T-shirt front.png" alt="grimes-shirt">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Grimes T-shirt Back.png" alt="grimes-shirt">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Grimes Oversized T-shirt.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Grimes Oversized T-shirt.html">Grimes Genesis - Oversized T-shirt</a>
-                        </li>
-                        <li class="price">$50 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 6 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Elvira T-shirt.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Elvira T-shirt Front.png" alt="elvira-shirt">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Elvira T-shirt Back.png" alt="elvira-shirt">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Elvira T-shirt.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Elvira T-shirt.html">Elvira - Oversized T-shirt</a>
-                        </li>
-                        <li class="price">$50 CAD</li>
-                    </ul>
-                </div>
-             <!-- Product 7 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Atlantis T-Shirt Black Page.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Atlantis shirt Front.png" alt="atlantis-shirt">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Atlantis shirt Back.png" alt="atlantis-shirt">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Atlantis T-Shirt Black Page.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Atlantis T-Shirt Black Page.html">Princess of Atlantis (Kida) - Oversized T-shirt</a>
-                        </li>
-                        <li class="price">$50 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 8 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Carrie T-shirt.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Carrie T-shirt Front.png" alt="carrie-t-shirt">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Carrie T-shirt Back.png" alt="carrie-t-shirt">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Carrie T-shirt.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Carrie T-shirt.html">Prom Queen (Carrie)- Oversized T-shirt</a>
-                        </li>
-                        <li class="price">$50 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 9 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Island%20Goddess%20T-shirt.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/IslandGoddessTransparentFront.png" alt="island-goddess">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/IslandGoddessTransparentBack.png" alt="island-goddess">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Island%20Goddess%20T-shirt.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Island%20Goddess%20T-shirt.html">Island Goddess “Fiji Time” - Oversized T-shirt</a>
-                        </li>
-                        <li class="price">$50 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 10 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Center of the Universe - Oversized T-shirt Page.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/CenterOfTheUniverseFront.png" alt="center-of-the-universe">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/CenterOfTheUniverseBack.png" alt="center-of-the-universe">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Center of the Universe - Oversized T-shirt Page.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Center of the Universe - Oversized T-shirt Page.html">Center of the Universe - Oversized T-shirt</a>
-                        </li>
-                        <li class="price">$50 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 11 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Doja cat Mooo! - Crop Top.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Doja shirt front.png" alt="Doja Cat-Crop Top">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Doja shirt back.png" alt="Doja Cat-Crop Top">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Doja cat Mooo! - Crop Top.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Doja cat Mooo! - Crop Top.html">Doja Cat "Mooo!" - Crop Top</a>
-                        </li>
-                        <li class="price">$50 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 12 -->
-              <div class="project-card">
-                    <div class="image-container">
-                        <a href="Hibiscus Shorts Page.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/hibiscus shorts front.png" alt="hibiscus-shorts">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/hibiscus shorts back.png" alt="hibiscus-shorts">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Hibiscus Shorts Page.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Hibiscus Shorts Page.html">Hibiscus Shorts</a>
-                        </li>
-                        <li class="price">$40 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 13 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Starlight Shorts Page.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/SpaceShortsTransparentFront.png" alt="starlight-shorts">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/SpaceShortsTransparentBack.png" alt="starlight-shorts">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Starlight Shorts Page.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Starlight Shorts Page.html">Starlight Shorts</a>
-                        </li>
-                        <li class="price">$40 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 14 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Elvira Hoodie.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Elvira Hoodie Front.png" alt="elvira-hoodie">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Elvira Hoodie Back.png" alt="elvira-hoodie">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Elvira Hoodie.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Elvira Hoodie.html">Elvira - Boxy Hoodie</a>
-                        </li>
-                        <li class="price">$80 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 15 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Grimes Collar Sweatshirt.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Grimes Genesis - Collar Sweatshirt Front.png" alt="grimes-sweatshirt front">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Grimes Genesis - Collar Sweatshirt Back.png" alt="grimes-sweatshirt back">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Grimes Collar Sweatshirt.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Grimes Collar Sweatshirt.html">Grimes Genesis - Collar Sweatshirt</a>
-                        </li>
-                        <li class="price">$70 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 16 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Sabrina Carpenter Hoodie.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Sabrina Hoodie Front Pink.png" alt="sabrina-hoodie front">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Sabrina Hoodie'  Back.png" alt="sabrina-hoodie back">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Sabrina Carpenter Hoodie.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Sabrina Carpenter Hoodie.html">Sabrina Carpenter Short N Sweet - Hoodie</a>
-                        </li>
-                        <li class="price">$80 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 17 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Atlantis Hoodie.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Atlantis Hoodie Front.png" alt="chappell-roan-sweatshirt">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Atlantis Hoodie Back.png" alt="chappell-roan-swaetshirt">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Atlantis Hoodie.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Atlantis Hoodie.html">Princess of Atlantis (Kida) - Hoodie</a>
-                        </li>
-                        <li class="price">$80 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 18 -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <a href="Chappell Roan of Arc Sweatshirt.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanOfArcFront.png" alt="chappell-roan-sweatshirt">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/ChappellRoanOfArcBack.png" alt="chappell-roan-swaetshirt">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Chappell%20Roan%20of%20Arc%20T-shirt.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Chappell%20Roan%20of%20Arc%20T-shirt.html">Chappell Roan of Arc - Sweatshirt</a>
-                        </li>
-                        <li class="price">$65 CAD</li>
-                    </ul>
-                </div>
-                <!-- Product 10 -->
-                <!-- <div class="project-card">
-                    <div class="image-container">
-                        <a href="Doja cat Mooo! - Crop Top Pink.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Doja crop top pink front.png" alt="Doja Cat-Crop Top">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/Doja crop top pink back.png" alt="Doja Cat-Crop Top">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Doja cat Mooo! - Crop Top Pink.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Doja cat Mooo! - Crop Top Pink.html">Doja Cat "Mooo!" - Crop Top Pink</a>
-                        </li>
-                    </ul>
-                </div> -->
-                <!-- Product 8 -->
-                <!-- <div class="project-card">
-                    <div class="image-container">
-                        <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/SpaceShortsTransparentFront.png" alt="space-shorts">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/space shorts back.png" alt="space-shorts">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="#" onclick="window.open(paymentUrl, '_blank'); return false;">Starlight Shorts</a>
-                        </li>
-                    </ul>
-                </div> -->
-                 <!-- Product 8 -->
-                 <!-- <div class="project-card">
-                    <div class="image-container">
-                        <a href="Chappell%20Roan%20of%20Arc%20T-shirt.html">
-                            <img class="front" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/doja cat mooo! - t-shirt.png">
-                            <img class="back" src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/doja cat mooo! - t-shirt back.png" alt="chappell-roan-shirt">
-                        </a>
-                    </div>
-                    <div class="status-container">
-                        <a href="Chappell%20Roan%20of%20Arc%20T-shirt.html" class="stock-status in-stock">In stock</a>
-                    </div>
-                    <ul>
-                        <li class="underline">
-                            <a href="Chappell%20Roan%20of%20Arc%20T-shirt.html">Chappell Roan of Arc - Oversized T-shirt</a>
-                        </li>
-                    </ul>
-            </div> -->
-        </section>
-    
-            <!-- Music Section -->
-            <!-- <section id="spotify-widget" class="hidden">
-                <iframe src="https://open.spotify.com/embed/artist/6t0pwOjbOSSqIkIzVaDYtg" width="100%" height="352" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                <p>Music I have written, released, and performed.</p>
-            </section> -->
 
-            <!-- Videos Section -->
-            <!-- <section id="video-section" class="hidden">
-                <iframe src="https://www.youtube.com/embed/X2jAbcmKAQs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                <p>
-                    I created this music video using Adobe Premiere Pro for a song I co-wrote with artists/producers Nathan Chiu and Sammi Morelli. I used footage we had filmed during the pandemic.
-                </p>
-            </section> -->
-
-        <!-- Contact Section -->
-        <section id="contact-section">
-            <h2>Contact Me</h2>
-            <form action="https://formsubmit.co/jamiekoya00@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </section>
-    </main>
-    <!-- Instagram Link -->
-<div style="text-align: center; margin-top: -30px; margin-left: -10px;">
-    <a href="https://www.instagram.com/jamiekoya" target="_blank" rel="noopener noreferrer" style="margin-left: 0px;">
-        <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/instagram-icone-icon.png" alt="Instagram" style="width: 78px; height: 78px;">
-    </a>
-    <!-- TikTok Link -->
-    <a href="https://www.tiktok.com/@jamiekoya" target="_blank" rel="noopener noreferrer" style="margin-left: 10px;">
-        <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/logo-tiktok-icone-1536.png" alt="TikTok" style="width: 78px; height: 78px;">
-    </a>
-    <!-- YouTube Link -->
-    <a href="https://www.youtube.com/@JamieKoya" target="_blank" rel="noopener noreferrer" style="margin-left: 10px;">
-        <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/youtube logo button.png" alt="YouTube" style="width: 78px; height: 78px;">
-    </a>
-    <!-- Linktree Link -->
-    <a href="https://linktr.ee/Jamiekoya?utm_source=linktree_admin_share" target="_blank" rel="noopener noreferrer" style="margin-left: 10px;">
-        <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/all my links icon 2.png" alt="Linktree" style="width: 78px; height: 78px;">
-    </a>
-    <!-- <div style="font-size: 16px; margin-top: -32px; margin-left: 293px; color: #bc08e0;">Click me!</div> -->
-</div>
-    <!-- Currency Selector -->
-                <div style="text-align: right; margin-bottom: 20px;">
-                    <label for="currency-select">View prices in:</label>
-                    <select id="currency-select">
-                        <option value="CAD" selected>CAD</option>
-                        <option value="USD">USD</option>
-                        <option value="EUR">EUR</option>
-                        <option value="GBP">GBP</option>
-                        <option value="NZD">NZD</option>
-                    </select>
-                </div>
-                <script>
-                const rates = {
-                    CAD: 1,
-                    USD: 0.73,
-                    EUR: 0.67,
-                    GBP: 0.57,
-                    NZD: 1.20
-                };
-                const currencySymbols = {
-                    CAD: '$',
-                    USD: '$',
-                    EUR: '€',
-                    GBP: '£',
-                    NZD: '$'
-                };
-                function updatePrices() {
-                    const currency = document.getElementById('currency-select').value;
-                    document.querySelectorAll('.project-card').forEach(card => {
-                        const priceEl = card.querySelector('.price');
-                        if (!priceEl) return;
-                        // Store original CAD price in a data attribute if not already set
-                        if (!priceEl.dataset.cadPrice) {
-                            const cadPrice = parseFloat(priceEl.textContent.replace(/[^0-9.]/g, ''));
-                            if (!isNaN(cadPrice)) {
-                                priceEl.dataset.cadPrice = cadPrice;
-                            }
-                        }
-                        const cadPrice = parseFloat(priceEl.dataset.cadPrice);
-                        if (isNaN(cadPrice)) return;
-                        const converted = (cadPrice * rates[currency]).toFixed(2);
-                        priceEl.textContent = `${currencySymbols[currency]}${converted} ${currency}`;
-                    });
-                }
-                document.getElementById('currency-select').addEventListener('change', updatePrices);
-                // Initial update
-                updatePrices();
-                </script>
-    <!-- Size Guide Link -->
-<div style="text-align: center; margin-top: 20px;"></div>
-    <a href="Size Guide Page.html" target="_blank" rel="noopener noreferrer">
-        <button style="padding: 15px 30px; font-size: 20px;">Size Guide</button>
-    </a>
-</div>
-    <!-- Footer -->
-    <footer class="site-footer">
-        <p>© 2025 by Koya Collection</p>
-  <p>
-    <a href="/Terms of services page.html">Terms of Service</a>
-      <p>
-    <a href="/Refund Policy.html">Refund Policy</a>
-  </p>
-</footer>
-
-
-    <!-- Scripts -->
-    <script src="./resources/scripts/toggleSections.js"></script>
-    <script src="./resources/scripts/contactForm.js"></script>
+  <!-- a11y helpers -->
+  <style>
+    .visually-hidden {
+      position: absolute !important;
+      height: 1px; width: 1px;
+      overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap; border: 0; padding: 0; margin: -1px;
+    }
+  </style>
 </body>
 </html>
-<!-- Instagram Link -->
-<!-- <div style="text-align: center; margin-top: 20px;">
-    <a href="https://www.instagram.com/jamiekoya" target="_blank" rel="noopener noreferrer">
-        <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/instagram-icone-icon.png" alt="Instagram" style="width: 40px; height: 40px;">
-           -->
-<!-- Linktree Link -->
-         <!-- <a href="https://linktr.ee/Jamiekoya?utm_source=linktree_admin_share" target="_blank" rel="noopener noreferrer">
-           <img src="https://koyacanadawebsite.blob.core.windows.net/websiteimages/all my links icon 2.png" alt="Linktree" style="width: 40px; height: 40px;">
-               </a>
-        </div>
-    </a> -->
-</div>
-<script>
-    </script>

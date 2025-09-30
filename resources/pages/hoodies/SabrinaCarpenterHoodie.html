@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabrina Carpenter S&S Hoodie</title>
+  <link rel="stylesheet" href="../../css/styles_body.css" />
+
+  <!-- PayPal script -->
+  <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="9UP8YVT58Q3Z2"></script>
+
+</head>
+<body>
+
+  <div class="product-container">
+
+    <!-- Cart Button -->
+    <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+
+    <!-- Add to Cart Button -->
+    <paypal-add-to-cart-button data-id="QVLRCPBL2YTPL"></paypal-add-to-cart-button>
+
+    <!-- Currency Selector -->
+    <div class="currency-selector">
+      <label for="currency-select">View prices in:</label>
+      <select id="currency-select">
+        <option value="CAD" selected>CAD</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="NZD">NZD</option>
+      </select>
+    </div>
+
+    <!-- Product Price -->
+    <div class="project-card">
+      <span class="price" data-cad-price="80">$80.00 CAD</span>
+    </div>
+
+  </div>
+
+  <!-- PayPal Button Scripts -->
+  <script>
+    cartPaypal.Cart({ id: "pp-view-cart" });
+    cartPaypal.AddToCart({ id: "QVLRCPBL2YTPL" });
+  </script>
+
+  <!-- Currency Conversion Script -->
+  <script>
+    const rates = {
+      CAD: 1,
+      USD: 0.73,
+      EUR: 0.67,
+      GBP: 0.57,
+      NZD: 1.20
+    };
+
+    const currencySymbols = {
+      CAD: '$',
+      USD: '$',
+      EUR: '€',
+      GBP: '£',
+      NZD: '$'
+    };
+
+    function updatePrices() {
+      const currency = document.getElementById('currency-select').value;
+      document.querySelectorAll('.project-card .price').forEach(priceEl => {
+        const cad = parseFloat(priceEl.dataset.cadPrice);
+        if (!isNaN(cad)) {
+          const converted = (cad * (rates[currency] || 1)).toFixed(2);
+          priceEl.textContent = `${currencySymbols[currency] || ''}${converted} ${currency}`;
+        }
+      });
+    }
+
+    document.getElementById('currency-select').addEventListener('change', updatePrices);
+    updatePrices(); // Initial run
+  </script>
+
+</body>
+</html>
