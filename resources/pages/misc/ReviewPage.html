@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="../../css/styles_body.css">
+  <title>Reviews | Koya Collection</title>
+
+  <style>
+    body {
+      color: #fff;
+      font-family: 'Source Code Pro', monospace;
+      margin: 0;
+      padding: 0;
+    }
+
+    .review-container {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .review-container h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .review-container h2 {
+      font-size: 1.5rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .review-container p,
+    .review-container ul {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      text-align: left; 
+    }
+
+    .review-form {
+      background: rgba(255,255,255,0.05);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+
+    .review-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .review-form input,
+    .review-form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      border: none;
+      font-family: inherit;
+      font-size: 1rem;
+      background: #222;
+      color: #fff;
+    }
+
+    .review-form input[type="file"] {
+      background: none;
+      color: #fff;
+      border: none;
+      padding: 0;
+    }
+
+    .review-form button {
+      background: #fff;
+      color: #222;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    .review-form button:hover {
+      background: #eee;
+    }
+
+    .reviews-list {
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .review-item {
+      background: rgba(255,255,255,0.04);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 18px;
+    }
+
+    .review-item img {
+      max-width: 120px;
+      border-radius: 6px;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+
+    .review-item .review-content {
+      display: inline-block;
+      vertical-align: middle;
+      max-width: 600px;
+    }
+
+    @media (max-width: 768px) {
+      .review-container {
+        padding: 15px;
+        margin: 30px auto;
+      }
+      .review-container h1 {
+        font-size: 2rem;
+      }
+      .review-container h2 {
+        font-size: 1.2rem;
+      }
+      .review-container p,
+      .review-container ul {
+        font-size: 0.9rem;
+      }
+      .review-item .review-content {
+        max-width: 100%;
+        display: block;
+      }
+      .review-item img {
+        max-width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="review-container">
+    <h1>Customer Reviews</h1>
+    <p>Share your experience with Koya Collection! Post your review and upload a photo of your item.</p>
+
+    <form class="review-form" id="reviewForm">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required maxlength="40">
+
+      <label for="review">Your Review</label>
+      <textarea id="review" name="review" rows="4" required maxlength="500"></textarea>
+
+      <label for="photo">Upload Photo (optional)</label>
+      <input type="file" id="photo" name="photo" accept="image/*">
+
+      <button type="submit">Submit Review</button>
+    </form>
+
+    <h2>Recent Reviews</h2>
+    <div class="reviews-list" id="reviewsList">
+      <!-- Reviews will appear here -->
+    </div>
+  </div>
+
+  <script>
+    // Simple local review storage (not persistent)
+    const form = document.getElementById('reviewForm');
+    const reviewsList = document.getElementById('reviewsList');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = form.name.value.trim();
+      const review = form.review.value.trim();
+      const photoInput = form.photo;
+      let photoURL = '';
+
+      if (photoInput.files && photoInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          photoURL = evt.target.result;
+          addReview(name, review, photoURL);
+        };
+        reader.readAsDataURL(photoInput.files[0]);
+      } else {
+        addReview(name, review, '');
+      }
+
+      form.reset();
+    });
+
+    function addReview(name, review, photoURL) {
+      const div = document.createElement('div');
+      div.className = 'review-item';
+
+      let html = '';
+      if (photoURL) {
+        html += `<img src="${photoURL}" alt="Review photo">`;
+      }
+      html += `<div class="review-content"><strong>${name}</strong><br>${review}</div>`;
+      div.innerHTML = html;
+
+      reviewsList.prepend(div);
+    }
+  </script>
+</body>
+</html>
