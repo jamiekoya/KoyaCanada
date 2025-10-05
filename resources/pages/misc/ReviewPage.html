@@ -169,9 +169,15 @@
   </div>
 
   <script>
-    // Simple local review storage (not persistent)
+    // Persistent review storage using localStorage
     const form = document.getElementById('reviewForm');
     const reviewsList = document.getElementById('reviewsList');
+
+    // Load reviews from localStorage on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      const reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+      reviews.forEach(r => addReview(r.name, r.review, r.photoURL));
+    });
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -185,15 +191,23 @@
         const reader = new FileReader();
         reader.onload = function(evt) {
           photoURL = evt.target.result;
+          saveReview(name, review, photoURL);
           addReview(name, review, photoURL);
         };
         reader.readAsDataURL(photoInput.files[0]);
       } else {
+        saveReview(name, review, '');
         addReview(name, review, '');
       }
 
       form.reset();
     });
+
+    function saveReview(name, review, photoURL) {
+      const reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+      reviews.unshift({ name, review, photoURL });
+      localStorage.setItem('reviews', JSON.stringify(reviews));
+    }
 
     function addReview(name, review, photoURL) {
       const div = document.createElement('div');
