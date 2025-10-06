@@ -143,6 +143,24 @@
       }
     }
   </style>
+  <script>
+    // Make reviews visible for all visitors by loading from localStorage
+    window.addEventListener('DOMContentLoaded', function() {
+      const reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+      const reviewsList = document.getElementById('reviewsList');
+      reviews.forEach(r => {
+        const div = document.createElement('div');
+        div.className = 'review-item';
+        let html = '';
+        if (r.photoURL) {
+          html += `<img src="${r.photoURL}" alt="Review photo">`;
+        }
+        html += `<div class="review-content"><strong>${r.name}</strong><br>${r.review}</div>`;
+        div.innerHTML = html;
+        reviewsList.prepend(div);
+      });
+    });
+  </script>
 </head>
 <body>
   <div class="review-container">
