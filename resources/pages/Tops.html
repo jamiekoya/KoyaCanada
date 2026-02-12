@@ -75,6 +75,19 @@
         </div>
       </div>
 
+              <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.price').forEach(el => {
+              const cad = parseFloat(el.getAttribute('data-cad-price'));
+              if (Number.isFinite(cad)) {
+          const newPrice = cad - 10;
+          el.setAttribute('data-cad-price', newPrice);
+          el.textContent = `$${newPrice} CAD`;
+              }
+            });
+          });
+        </script>
+
       <!-- Category links + size guide -->
       <div class="links-row" aria-label="Categories and Size Guide">
         <a class="pill" href="../index.html">All</a>

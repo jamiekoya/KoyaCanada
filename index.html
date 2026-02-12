@@ -20,6 +20,19 @@
   </script>
 </head>
 
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.price').forEach(el => {
+              const cad = parseFloat(el.getAttribute('data-cad-price'));
+              if (Number.isFinite(cad)) {
+          const newPrice = cad - 10;
+          el.setAttribute('data-cad-price', newPrice);
+          el.textContent = `$${newPrice} CAD`;
+              }
+            });
+          });
+        </script>
+
 <body>
   <a class="visually-hidden" href="#shop">Skip to Shop</a>
 
@@ -348,7 +361,7 @@
             <li class="price" data-cad-price="40">$40 CAD</li>
           </ul>
         </article>
-
+        
         <!-- 17. Sabrina Crop Top -->
         <article class="project-card">
           <div class="image-container">
